@@ -16,6 +16,11 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Autohaus AKER",
   description: "Premium Fahrzeuge aus Korea",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: "/favicon.svg",
+    apple: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export const viewport = {

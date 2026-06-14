@@ -61,8 +61,10 @@ export default function AdminSidebar() {
             <button
               key={l}
               onClick={() => setLocale(l)}
-              className={`flex-1 rounded-sm py-1 text-xs uppercase ${
-                locale === l ? "bg-gold text-black" : "text-muted"
+              className={`flex-1 rounded-sm py-1.5 text-xs font-bold uppercase transition-all ${
+                locale === l
+                  ? "bg-gold text-black shadow-sm ring-1 ring-gold-light/50"
+                  : "text-muted hover:bg-gold/10 hover:text-gold-light"
               }`}
             >
               {l}
