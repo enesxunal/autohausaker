@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { adminMessages, type AdminLocale } from "@/lib/admin-messages";
 
 interface AdminLocaleContextType {
@@ -19,17 +19,20 @@ export function AdminLocaleProvider({ children }: { children: ReactNode }) {
     if (saved === "de" || saved === "tr") setLocaleState(saved);
   }, []);
 
-  const setLocale = (l: AdminLocale) => {
+  const setLocale = useCallback((l: AdminLocale) => {
     setLocaleState(l);
     localStorage.setItem("admin-locale", l);
-  };
+  }, []);
 
-  const t = (key: keyof typeof adminMessages.de) => adminMessages[locale][key];
+  const t = useCallback(
+    (key: keyof typeof adminMessages.de) => adminMessages[locale][key],
+    [locale]
+  );
+
+  const value = useMemo(() => ({ locale, setLocale, t }), [locale, setLocale, t]);
 
   return (
-    <AdminLocaleContext.Provider value={{ locale, setLocale, t }}>
-      {children}
-    </AdminLocaleContext.Provider>
+    <AdminLocaleContext.Provider value={value}>{children}</AdminLocaleContext.Provider>
   );
 }
 

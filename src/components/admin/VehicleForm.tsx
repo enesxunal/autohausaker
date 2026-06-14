@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { CAR_MAKES, getModelsForMake } from "@/data/car-makes-models";
 import { useAdminLocale } from "./AdminLocaleProvider";
+import ImageGallery from "./ImageGallery";
 import type { Vehicle } from "@/lib/types";
 
 interface VehicleFormProps {
@@ -14,21 +15,49 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
   const { t } = useAdminLocale();
   const router = useRouter();
   const [brand, setBrand] = useState(vehicle?.brand || "");
+  const [model, setModel] = useState(vehicle?.model || "");
   const [images, setImages] = useState<string[]>(vehicle?.images || []);
   const [loading, setLoading] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState("");
 
-  const uploadImage = async (file: File) => {
-    const formData = new FormData();
-    formData.append("file", file);
-    const res = await fetch("/api/upload", { method: "POST", body: formData });
-    if (!res.ok) throw new Error("Upload failed");
-    const { url } = await res.json();
-    setImages((prev) => [...prev, url]);
+  useEffect(() => {
+    if (!brand || !model) return;
+    const available = getModelsForMake(brand);
+    if (!available.includes(model)) setModel("");
+  }, [brand, model]);
+
+  const models = getModelsForMake(brand);
+
+  const uploadFiles = async (files: FileList | File[]) => {
+    setUploading(true);
+    setError("");
+    try {
+      const list = Array.from(files);
+      const formData = new FormData();
+      list.forEach((file) => formData.append("files", file));
+
+      const res = await fetch("/api/upload", { method: "POST", body: formData });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || t("uploadError"));
+        return;
+      }
+
+      const newUrls: string[] = data.urls ?? (data.url ? [data.url] : []);
+      setImages((prev) => [...prev, ...newUrls]);
+    } catch {
+      setError(t("uploadError"));
+    } finally {
+      setUploading(false);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setError("");
     const form = new FormData(e.currentTarget);
 
     const payload = {
@@ -52,28 +81,49 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
     const url = vehicle ? `/api/admin/vehicles/${vehicle.id}` : "/api/admin/vehicles";
     const method = vehicle ? "PUT" : "POST";
 
-    const res = await fetch(url, {
-      method,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
+    try {
+      const res = await fetch(url, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
 
-    if (res.ok) {
+      if (!res.ok) {
+        setError(data.error || t("saveError"));
+        setLoading(false);
+        return;
+      }
+
       router.push("/admin/vehicles");
       router.refresh();
+    } catch {
+      setError(t("saveError"));
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const handleDelete = async () => {
     if (!vehicle || !confirm(t("confirmDelete"))) return;
-    await fetch(`/api/admin/vehicles/${vehicle.id}`, { method: "DELETE" });
+    setLoading(true);
+    const res = await fetch(`/api/admin/vehicles/${vehicle.id}`, { method: "DELETE" });
+    if (!res.ok) {
+      setError(t("saveError"));
+      setLoading(false);
+      return;
+    }
     router.push("/admin/vehicles");
     router.refresh();
   };
 
   return (
     <form onSubmit={handleSubmit} className="max-w-3xl space-y-6">
+      {error && (
+        <p className="rounded-sm border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+          {error}
+        </p>
+      )}
+
       <div className="grid gap-6 md:grid-cols-2">
         <div className="md:col-span-2">
           <label className="mb-2 block text-sm text-muted">{t("title")} *</label>
@@ -96,9 +146,15 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
         </div>
         <div>
           <label className="mb-2 block text-sm text-muted">{t("model")} *</label>
-          <select name="model" required defaultValue={vehicle?.model} className="input-field">
+          <select
+            name="model"
+            required
+            value={model}
+            onChange={(e) => setModel(e.target.value)}
+            className="input-field"
+          >
             <option value="">—</option>
-            {getModelsForMake(brand).map((m) => (
+            {models.map((m) => (
               <option key={m} value={m}>{m}</option>
             ))}
           </select>
@@ -166,39 +222,24 @@ export default function VehicleForm({ vehicle }: VehicleFormProps) {
         </label>
       </div>
 
-      <div>
-        <label className="mb-2 block text-sm text-muted">{t("images")}</label>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={async (e) => {
-            const file = e.target.files?.[0];
-            if (file) await uploadImage(file);
-          }}
-          className="input-field"
-        />
-        <div className="mt-4 flex flex-wrap gap-2">
-          {images.map((url, i) => (
-            <div key={i} className="relative">
-              <img src={url} alt="" className="h-20 w-28 rounded-sm object-cover" />
-              <button
-                type="button"
-                onClick={() => setImages((prev) => prev.filter((_, j) => j !== i))}
-                className="absolute -right-2 -top-2 rounded-full bg-red-600 px-1.5 text-xs text-white"
-              >
-                ×
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
+      <ImageGallery
+        images={images}
+        onChange={setImages}
+        onUpload={uploadFiles}
+        uploading={uploading}
+      />
 
       <div className="flex gap-4">
-        <button type="submit" disabled={loading} className="btn-primary">
+        <button type="submit" disabled={loading || uploading} className="btn-primary">
           {loading ? "..." : t("save")}
         </button>
         {vehicle && (
-          <button type="button" onClick={handleDelete} className="btn-outline border-red-500 text-red-400">
+          <button
+            type="button"
+            onClick={handleDelete}
+            disabled={loading}
+            className="btn-outline border-red-500 text-red-400"
+          >
             {t("delete")}
           </button>
         )}
