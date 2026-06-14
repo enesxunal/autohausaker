@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/admin-api";
 import { SEED_VEHICLES } from "@/data/seed-vehicles";
+import { revalidateVehiclePages } from "@/lib/revalidate-vehicles";
 import { createServiceClient } from "@/lib/supabase/server";
 import { getSupabaseServiceKey } from "@/lib/supabase/env";
 
@@ -27,6 +28,8 @@ export async function POST() {
   const { count } = await supabase
     .from("vehicles")
     .select("*", { count: "exact", head: true });
+
+  revalidateVehiclePages();
 
   return NextResponse.json({ imported, total: count ?? 0 });
 }

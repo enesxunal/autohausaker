@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/admin-api";
 import { slugify } from "@/lib/data";
+import { revalidateVehiclePages } from "@/lib/revalidate-vehicles";
 import { createServiceClient } from "@/lib/supabase/server";
 import { getSupabaseServiceKey } from "@/lib/supabase/env";
 
@@ -34,6 +35,7 @@ export async function PUT(request: Request, { params }: RouteParams) {
     .single();
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  revalidateVehiclePages(data.slug);
   return NextResponse.json(data);
 }
 
@@ -43,8 +45,16 @@ export async function DELETE(_request: Request, { params }: RouteParams) {
 
   const { id } = await params;
   const db = (await adminDb()) ?? auth.supabase!;
+
+  const { data: existing } = await db
+    .from("vehicles")
+    .select("slug")
+    .eq("id", id)
+    .maybeSingle();
+
   const { error } = await db.from("vehicles").delete().eq("id", id);
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  revalidateVehiclePages(existing?.slug);
   return NextResponse.json({ success: true });
 }

@@ -2,6 +2,7 @@ import type { Locale } from "@/i18n/routing";
 import type { FuelType, SiteSettings, Transmission, Vehicle, VehicleStatus } from "./types";
 import { DEFAULT_SETTINGS } from "./types";
 import { SEED_VEHICLES } from "@/data/seed-vehicles";
+import { unstable_noStore as noStore } from "next/cache";
 
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 
@@ -33,9 +34,10 @@ export interface VehicleFilters {
 }
 
 export async function getVehicles(filters: VehicleFilters = {}): Promise<Vehicle[]> {
-  let vehicles: Vehicle[] = [];
+  const supabaseConfigured = isSupabaseConfigured();
 
-  if (isSupabaseConfigured()) {
+  if (supabaseConfigured) {
+    noStore();
     try {
       const { createClient } = await import("./supabase/server");
       const supabase = await createClient();
@@ -53,14 +55,13 @@ export async function getVehicles(filters: VehicleFilters = {}): Promise<Vehicle
       }
 
       const { data } = await query.order("created_at", { ascending: false });
-      if (data && data.length > 0) vehicles = data as Vehicle[];
+      return (data ?? []) as Vehicle[];
     } catch {
-      // fallback to seed
+      return [];
     }
   }
 
-  if (vehicles.length === 0) {
-    vehicles = SEED_VEHICLES.filter((v) => {
+  return SEED_VEHICLES.filter((v) => {
       if (filters.brand && v.brand !== filters.brand) return false;
       if (filters.status && v.status !== filters.status) return false;
       if (filters.transmission && v.transmission !== filters.transmission) return false;
@@ -76,13 +77,11 @@ export async function getVehicles(filters: VehicleFilters = {}): Promise<Vehicle
       }
       return true;
     });
-  }
-
-  return vehicles;
 }
 
 export async function getVehicleBySlug(slug: string): Promise<Vehicle | null> {
   if (isSupabaseConfigured()) {
+    noStore();
     try {
       const { createClient } = await import("./supabase/server");
       const supabase = await createClient();
@@ -92,9 +91,9 @@ export async function getVehicleBySlug(slug: string): Promise<Vehicle | null> {
         .eq("slug", slug)
         .eq("published", true)
         .single();
-      if (data) return data as Vehicle;
+      return (data as Vehicle) ?? null;
     } catch {
-      // fallback
+      return null;
     }
   }
 

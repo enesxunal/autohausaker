@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/admin-api";
 import { slugify } from "@/lib/data";
+import { revalidateVehiclePages } from "@/lib/revalidate-vehicles";
 import { createServiceClient } from "@/lib/supabase/server";
 import { getSupabaseServiceKey } from "@/lib/supabase/env";
 
@@ -26,6 +27,7 @@ export async function POST(request: Request) {
     .single();
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  revalidateVehiclePages(data.slug);
   return NextResponse.json(data);
 }
 
