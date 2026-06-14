@@ -4,7 +4,16 @@ import { DEFAULT_SETTINGS } from "./types";
 import { SEED_VEHICLES } from "@/data/seed-vehicles";
 import { unstable_noStore as noStore } from "next/cache";
 
-import { isSupabaseConfigured } from "@/lib/supabase/env";
+import { isSupabaseConfigured, getSupabaseServiceKey } from "@/lib/supabase/env";
+
+async function getCatalogClient() {
+  if (getSupabaseServiceKey()) {
+    const { createServiceClient } = await import("./supabase/server");
+    return createServiceClient();
+  }
+  const { createPublicClient } = await import("./supabase/public");
+  return createPublicClient();
+}
 
 export async function getSettings(): Promise<SiteSettings> {
   if (!isSupabaseConfigured()) return DEFAULT_SETTINGS;
@@ -39,8 +48,7 @@ export async function getVehicles(filters: VehicleFilters = {}): Promise<Vehicle
   if (supabaseConfigured) {
     noStore();
     try {
-      const { createClient } = await import("./supabase/server");
-      const supabase = await createClient();
+      const supabase = await getCatalogClient();
       let query = supabase.from("vehicles").select("*").eq("published", true);
 
       if (filters.brand) query = query.eq("brand", filters.brand);
@@ -54,9 +62,11 @@ export async function getVehicles(filters: VehicleFilters = {}): Promise<Vehicle
         );
       }
 
-      const { data } = await query.order("created_at", { ascending: false });
+      const { data, error } = await query.order("created_at", { ascending: false });
+      if (error) console.error("getVehicles:", error.message);
       return (data ?? []) as Vehicle[];
-    } catch {
+    } catch (err) {
+      console.error("getVehicles:", err);
       return [];
     }
   }
@@ -83,16 +93,17 @@ export async function getVehicleBySlug(slug: string): Promise<Vehicle | null> {
   if (isSupabaseConfigured()) {
     noStore();
     try {
-      const { createClient } = await import("./supabase/server");
-      const supabase = await createClient();
-      const { data } = await supabase
+      const supabase = await getCatalogClient();
+      const { data, error } = await supabase
         .from("vehicles")
         .select("*")
         .eq("slug", slug)
         .eq("published", true)
         .single();
+      if (error) console.error("getVehicleBySlug:", error.message);
       return (data as Vehicle) ?? null;
-    } catch {
+    } catch (err) {
+      console.error("getVehicleBySlug:", err);
       return null;
     }
   }

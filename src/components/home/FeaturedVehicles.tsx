@@ -7,7 +7,12 @@ import { ArrowRight } from "lucide-react";
 
 export default async function FeaturedVehicles() {
   const t = await getTranslations("featured");
-  const vehicles = await getVehicles({ featured: true });
+  let vehicles = await getVehicles({ featured: true });
+  if (vehicles.length === 0) {
+    vehicles = await getVehicles({});
+  }
+
+  if (vehicles.length === 0) return null;
 
   return (
     <section className="section-padding">

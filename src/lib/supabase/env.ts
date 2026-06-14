@@ -26,5 +26,7 @@ export function getSupabaseServiceKey(): string {
 }
 
 export function isSupabaseConfigured(): boolean {
-  return Boolean(getSupabaseUrl() && getSupabaseAnonKey());
+  return Boolean(
+    getSupabaseUrl() && (getSupabaseAnonKey() || getSupabaseServiceKey())
+  );
 }
