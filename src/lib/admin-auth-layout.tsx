@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, createServiceClient } from "@/lib/supabase/server";
 import AdminSidebar from "@/components/admin/AdminSidebar";
-import { isSupabaseConfigured } from "@/lib/supabase/env";
+import { getSupabaseServiceKey, isSupabaseConfigured } from "@/lib/supabase/env";
 
 export async function AdminAuthLayout({
   children,
@@ -30,11 +30,24 @@ export async function AdminAuthLayout({
 
   if (!user) redirect("/admin/login");
 
-  const { data: profile } = await supabase
-    .from("admin_profiles")
-    .select("*")
-    .eq("id", user.id)
-    .single();
+  let profile = null;
+
+  if (getSupabaseServiceKey()) {
+    const serviceClient = await createServiceClient();
+    const { data } = await serviceClient
+      .from("admin_profiles")
+      .select("*")
+      .eq("id", user.id)
+      .maybeSingle();
+    profile = data;
+  } else {
+    const { data } = await supabase
+      .from("admin_profiles")
+      .select("*")
+      .eq("id", user.id)
+      .maybeSingle();
+    profile = data;
+  }
 
   if (!profile) redirect("/admin/login");
 

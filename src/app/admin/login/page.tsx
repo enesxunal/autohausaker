@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { createClient } from "@/lib/supabase/client";
 import { useAdminLocale } from "@/components/admin/AdminLocaleProvider";
 
 export default function AdminLoginPage() {
@@ -19,45 +18,29 @@ export default function AdminLoginPage() {
     const password = form.get("password") as string;
 
     try {
-      const supabase = createClient();
-      const { data: authData, error: authError } =
-        await supabase.auth.signInWithPassword({
-          email,
-          password,
-        });
+      const response = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-      if (authError) {
-        setError(authError.message || t("loginError"));
-        setLoading(false);
-        return;
-      }
+      const data = await response.json();
 
-      if (!authData.user) {
-        setError(t("loginError"));
-        setLoading(false);
-        return;
-      }
-
-      const { data: profile } = await supabase
-        .from("admin_profiles")
-        .select("id")
-        .eq("id", authData.user.id)
-        .maybeSingle();
-
-      if (!profile) {
-        await supabase.auth.signOut();
-        setError(t("profileMissing"));
+      if (!response.ok) {
+        if (data.error === "profileMissing") {
+          setError(t("profileMissing"));
+        } else if (data.error === "loginError") {
+          setError(t("loginError"));
+        } else {
+          setError(data.error || t("loginError"));
+        }
         setLoading(false);
         return;
       }
 
       window.location.href = "/admin";
-    } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Supabase bağlantısı kurulamadı. Vercel ortam değişkenlerini kontrol edin."
-      );
+    } catch {
+      setError(t("loginError"));
       setLoading(false);
     }
   };
