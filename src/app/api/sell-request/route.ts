@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { put } from "@vercel/blob";
 import { Resend } from "resend";
 import { z } from "zod";
-import { getSupabaseServiceKey } from "@/lib/supabase/env";
+import { createServiceClient } from "@/lib/supabase/server";
+import { getSupabaseServiceKey, getSupabaseUrl } from "@/lib/supabase/env";
 
 const schema = z.object({
   name: z.string().min(1),
@@ -44,43 +45,73 @@ export async function POST(request: Request) {
       imageUrl = blob.url;
     }
 
-    if (getSupabaseServiceKey()) {
-      const { createServiceClient } = await import("@/lib/supabase/server");
-      const supabase = await createServiceClient();
-      const { error: dbError } = await supabase.from("sell_requests").insert({
-        ...parsed,
+    if (!getSupabaseUrl() || !getSupabaseServiceKey()) {
+      return NextResponse.json(
+        { error: "Veritabanı yapılandırması eksik" },
+        { status: 503 }
+      );
+    }
+
+    const supabase = await createServiceClient();
+    const { data: row, error: dbError } = await supabase
+      .from("sell_requests")
+      .insert({
+        name: parsed.name,
+        email: parsed.email,
+        phone: parsed.phone,
+        brand: parsed.brand,
+        model: parsed.model,
         year: parsed.year ? parseInt(parsed.year, 10) : null,
         mileage: parsed.mileage ? parseInt(parsed.mileage, 10) : null,
+        transmission: parsed.transmission || null,
+        fuel_type: parsed.fuel_type || null,
+        description: parsed.description || null,
         image_url: imageUrl,
-      });
-      if (dbError) {
-        console.error("sell_requests insert:", dbError.message);
-      }
+        status: "new",
+      })
+      .select("id")
+      .single();
+
+    if (dbError) {
+      console.error("sell_requests insert:", dbError.message, dbError.code);
+      return NextResponse.json(
+        {
+          error:
+            dbError.code === "42P01"
+              ? "sell_requests tablosu yok — Supabase SQL Editor'da schema çalıştırın"
+              : dbError.message,
+        },
+        { status: 500 }
+      );
     }
 
     if (process.env.RESEND_API_KEY) {
-      const resend = new Resend(process.env.RESEND_API_KEY);
-      await resend.emails.send({
-        from: process.env.FROM_EMAIL || "Autohaus AKER <onboarding@resend.dev>",
-        to: process.env.CONTACT_EMAIL || "info@autohausaker.de",
-        subject: `Neue Verkaufsanfrage: ${parsed.brand} ${parsed.model}`,
-        html: `
-          <h2>Neue Verkaufsanfrage</h2>
-          <p><strong>Name:</strong> ${parsed.name}</p>
-          <p><strong>E-Mail:</strong> ${parsed.email}</p>
-          <p><strong>Telefon:</strong> ${parsed.phone}</p>
-          <p><strong>Fahrzeug:</strong> ${parsed.brand} ${parsed.model}</p>
-          ${parsed.year ? `<p><strong>Baujahr:</strong> ${parsed.year}</p>` : ""}
-          ${parsed.mileage ? `<p><strong>KM:</strong> ${parsed.mileage}</p>` : ""}
-          ${parsed.transmission ? `<p><strong>Getriebe:</strong> ${parsed.transmission}</p>` : ""}
-          ${parsed.fuel_type ? `<p><strong>Kraftstoff:</strong> ${parsed.fuel_type}</p>` : ""}
-          ${parsed.description ? `<p><strong>Beschreibung:</strong> ${parsed.description}</p>` : ""}
-          ${imageUrl ? `<p><strong>Foto:</strong> <a href="${imageUrl}">${imageUrl}</a></p>` : ""}
-        `,
-      });
+      try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        await resend.emails.send({
+          from: process.env.FROM_EMAIL || "Autohaus AKER <onboarding@resend.dev>",
+          to: process.env.CONTACT_EMAIL || "info@autohausaker.de",
+          subject: `Neue Verkaufsanfrage: ${parsed.brand} ${parsed.model}`,
+          html: `
+            <h2>Neue Verkaufsanfrage</h2>
+            <p><strong>Name:</strong> ${parsed.name}</p>
+            <p><strong>E-Mail:</strong> ${parsed.email}</p>
+            <p><strong>Telefon:</strong> ${parsed.phone}</p>
+            <p><strong>Fahrzeug:</strong> ${parsed.brand} ${parsed.model}</p>
+            ${parsed.year ? `<p><strong>Baujahr:</strong> ${parsed.year}</p>` : ""}
+            ${parsed.mileage ? `<p><strong>KM:</strong> ${parsed.mileage}</p>` : ""}
+            ${parsed.transmission ? `<p><strong>Getriebe:</strong> ${parsed.transmission}</p>` : ""}
+            ${parsed.fuel_type ? `<p><strong>Kraftstoff:</strong> ${parsed.fuel_type}</p>` : ""}
+            ${parsed.description ? `<p><strong>Beschreibung:</strong> ${parsed.description}</p>` : ""}
+            ${imageUrl ? `<p><strong>Foto:</strong> <a href="${imageUrl}">${imageUrl}</a></p>` : ""}
+          `,
+        });
+      } catch (emailErr) {
+        console.error("Sell request email failed:", emailErr);
+      }
     }
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, id: row.id });
   } catch (error) {
     console.error("Sell request error:", error);
     return NextResponse.json({ error: "Failed" }, { status: 500 });

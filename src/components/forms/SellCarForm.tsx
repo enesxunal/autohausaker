@@ -10,10 +10,12 @@ export default function SellCarForm() {
   const tFuel = useTranslations("fuel");
   const [brand, setBrand] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
+    setErrorMsg("");
     const form = e.currentTarget;
     const data = new FormData(form);
 
@@ -22,11 +24,13 @@ export default function SellCarForm() {
         method: "POST",
         body: data,
       });
-      if (!res.ok) throw new Error("Failed");
+      const result = await res.json();
+      if (!res.ok) throw new Error(result.error || "Failed");
       setStatus("success");
       form.reset();
       setBrand("");
-    } catch {
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : t("error"));
       setStatus("error");
     }
   };
@@ -115,7 +119,7 @@ export default function SellCarForm() {
         <input name="photo" type="file" accept="image/*" className="input-field" />
       </div>
       {status === "error" && (
-        <p className="text-sm text-red-400">{t("error")}</p>
+        <p className="text-sm text-red-400">{errorMsg || t("error")}</p>
       )}
       <button type="submit" disabled={status === "loading"} className="btn-primary w-full">
         {status === "loading" ? "..." : t("submit")}
