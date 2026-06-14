@@ -9,16 +9,25 @@ export default function AdminUsersPageClient() {
   const [users, setUsers] = useState<AdminProfile[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  const loadUsers = () =>
+    fetch("/api/admin/users")
+      .then(async (res) => {
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "Failed");
+        if (!Array.isArray(data)) throw new Error("Invalid response");
+        setUsers(data);
+      })
+      .catch((err) => setError(err instanceof Error ? err.message : t("noData")));
 
   useEffect(() => {
-    fetch("/api/admin/users")
-      .then((r) => (r.ok ? r.json() : []))
-      .then(setUsers)
-      .catch(() => setUsers([]));
+    loadUsers().finally(() => setLoading(false));
   }, []);
 
   const createUser = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError("");
     const form = new FormData(e.currentTarget);
     const res = await fetch("/api/admin/users", {
       method: "POST",
@@ -30,14 +39,18 @@ export default function AdminUsersPageClient() {
         role: form.get("role"),
       }),
     });
+    const data = await res.json();
     if (res.ok) {
       setShowForm(false);
-      const updated = await fetch("/api/admin/users").then((r) => r.json());
-      setUsers(updated);
+      await loadUsers();
     } else {
-      setError("Error");
+      setError(data.error || "Error");
     }
   };
+
+  if (loading) {
+    return <p className="animate-pulse text-muted">...</p>;
+  }
 
   return (
     <div>
@@ -58,10 +71,12 @@ export default function AdminUsersPageClient() {
             <option value="viewer">{t("viewer")}</option>
             <option value="super_admin">{t("superAdmin")}</option>
           </select>
-          {error && <p className="text-red-400 text-sm">{error}</p>}
+          {error && <p className="text-sm text-red-400">{error}</p>}
           <button type="submit" className="btn-primary">{t("save")}</button>
         </form>
       )}
+
+      {error && !showForm && <p className="mb-4 text-sm text-red-400">{error}</p>}
 
       <div className="space-y-3">
         {users.map((u) => (
@@ -73,7 +88,7 @@ export default function AdminUsersPageClient() {
             <span className="rounded-sm bg-gold/10 px-2 py-1 text-xs text-gold">{u.role}</span>
           </div>
         ))}
-        {users.length === 0 && <p className="text-muted">{t("noData")}</p>}
+        {users.length === 0 && !error && <p className="text-muted">{t("noData")}</p>}
       </div>
     </div>
   );

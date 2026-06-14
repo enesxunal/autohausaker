@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { put } from "@vercel/blob";
 import { Resend } from "resend";
 import { z } from "zod";
-import { getSupabaseServiceKey, isSupabaseConfigured } from "@/lib/supabase/env";
+import { getSupabaseServiceKey } from "@/lib/supabase/env";
 
 const schema = z.object({
   name: z.string().min(1),
@@ -44,15 +44,18 @@ export async function POST(request: Request) {
       imageUrl = blob.url;
     }
 
-    if (isSupabaseConfigured() && getSupabaseServiceKey()) {
+    if (getSupabaseServiceKey()) {
       const { createServiceClient } = await import("@/lib/supabase/server");
       const supabase = await createServiceClient();
-      await supabase.from("sell_requests").insert({
+      const { error: dbError } = await supabase.from("sell_requests").insert({
         ...parsed,
-        year: parsed.year ? parseInt(parsed.year) : null,
-        mileage: parsed.mileage ? parseInt(parsed.mileage) : null,
+        year: parsed.year ? parseInt(parsed.year, 10) : null,
+        mileage: parsed.mileage ? parseInt(parsed.mileage, 10) : null,
         image_url: imageUrl,
       });
+      if (dbError) {
+        console.error("sell_requests insert:", dbError.message);
+      }
     }
 
     if (process.env.RESEND_API_KEY) {

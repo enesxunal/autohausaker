@@ -1,14 +1,20 @@
 import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/admin-api";
 import { createServiceClient } from "@/lib/supabase/server";
+import { getSupabaseServiceKey } from "@/lib/supabase/env";
+
+async function adminDb() {
+  if (getSupabaseServiceKey()) return createServiceClient();
+  return null;
+}
 
 export async function POST(request: Request) {
   const auth = await requireAdmin({ requireSuperAdmin: true });
   if ("error" in auth && auth.error) return auth.error;
 
   const { email, password, name, role, permissions } = await request.json();
-
   const serviceClient = await createServiceClient();
+
   const { data: newUser, error: createError } = await serviceClient.auth.admin.createUser({
     email,
     password,
@@ -24,7 +30,8 @@ export async function POST(request: Request) {
     email,
     name,
     role: role || "editor",
-    permissions: permissions || { vehicles: true, settings: false, sell_requests: true, users: false },
+    permissions:
+      permissions || { vehicles: true, settings: false, sell_requests: true, users: false },
     created_by: auth.user!.id,
   });
 
@@ -39,8 +46,9 @@ export async function GET() {
   const auth = await requireAdmin({ requireSuperAdmin: true });
   if ("error" in auth && auth.error) return auth.error;
 
-  const { data, error } = await auth.supabase!.from("admin_profiles").select("*");
+  const db = (await adminDb()) ?? auth.supabase!;
+  const { data, error } = await db.from("admin_profiles").select("*").order("created_at");
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json(data);
+  return NextResponse.json(data ?? []);
 }
