@@ -12,12 +12,12 @@ export default async function SellCta() {
         <div className="relative overflow-hidden gold-gradient-border">
           <div className="absolute inset-0">
             <Image
-              src="/images/storefront.png"
+              src="/images/storefront.jpg"
               alt="Autohaus AKER"
               fill
-              className="object-cover opacity-20"
+              className="object-cover opacity-55 saturate-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/70" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/40" />
           </div>
 
           <div className="gold-v-frame relative px-5 py-12 text-center sm:px-8 md:px-20 md:py-24">

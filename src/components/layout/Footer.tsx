@@ -35,7 +35,7 @@ export default async function Footer({ settings }: FooterProps) {
 
       {/* Brand logo strip */}
       <div className="border-b border-gold/10 py-8">
-        <div className="container-narrow flex flex-wrap items-center justify-center gap-8 px-4 opacity-50 md:gap-12">
+        <div className="container-narrow flex flex-wrap items-center justify-center gap-8 px-4 opacity-80 md:gap-12">
           {LUXURY_BRANDS.slice(0, 6).map((brand) => (
             <BrandLogo
               key={brand.id}

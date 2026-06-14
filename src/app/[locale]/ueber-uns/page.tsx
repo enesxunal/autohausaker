@@ -18,15 +18,15 @@ export default async function AboutPage() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="relative">
             <div className="absolute -inset-3 gold-gradient-border opacity-50" />
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-gold/15">
               <Image
-                src="/images/storefront.png"
+                src="/images/storefront.jpg"
                 alt="Autohaus AKER Showroom"
                 fill
+                unoptimized
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
           </div>
 

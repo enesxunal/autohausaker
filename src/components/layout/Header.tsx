@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
@@ -43,9 +44,16 @@ export default function Header() {
       <div className="h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
 
       <div className="container-narrow flex items-center justify-between px-4 py-3 md:px-8 md:py-5">
-        <Link href="/" className="group flex items-center gap-2 md:gap-3" onClick={() => setOpen(false)}>
-          <div className="hidden h-10 w-px gold-gradient-bg md:block" />
-          <div>
+        <Link href="/" className="group flex items-center gap-3" onClick={() => setOpen(false)}>
+          <Image
+            src="/images/sign.png"
+            alt="Autohaus AKER"
+            width={576}
+            height={1024}
+            className="h-10 w-auto brightness-110 contrast-110 md:h-12"
+            priority
+          />
+          <div className="hidden sm:block">
             <span className="block font-display text-lg font-semibold uppercase tracking-[0.2em] gold-gradient-text md:text-2xl md:tracking-[0.25em]">
               Autohaus
             </span>

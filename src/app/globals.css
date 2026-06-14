@@ -118,17 +118,19 @@ body {
 /* Brand logos — original colors by default */
 .brand-logo {
   object-fit: contain;
-  opacity: 0.9;
-  transition: opacity 0.35s ease;
+  opacity: 1;
+  transition: opacity 0.35s ease, filter 0.35s ease;
+  filter: brightness(1.05);
 }
 
 .brand-logo-hero {
   max-height: 44px;
   width: auto;
+  filter: brightness(1.1);
 }
 
 .brand-logo-footer {
-  opacity: 0.65;
+  opacity: 0.85;
 }
 
 .brand-logo-footer:hover {
@@ -214,6 +216,7 @@ body {
   background: linear-gradient(90deg, transparent, rgba(196, 165, 116, 0.45), transparent);
   opacity: 0;
   transition: opacity 0.4s;
+  pointer-events: none;
 }
 
 .card:hover {

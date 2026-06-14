@@ -5,8 +5,7 @@ import { ArrowRight, Phone } from "lucide-react";
 import { LUXURY_BRANDS } from "@/data/brands";
 import BrandLogo from "@/components/ui/BrandLogo";
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1614162692292-7a56aaa85057?w=1920&q=80";
+const HERO_IMAGE = "/images/autohausaker-banner.jpg";
 
 export default async function Hero() {
   const t = await getTranslations("hero");
@@ -15,16 +14,15 @@ export default async function Hero() {
     <section className="relative min-h-[78vh] overflow-hidden md:min-h-[92vh]">
       <Image
         src={HERO_IMAGE}
-        alt="Ferrari 488 GTB"
+        alt="Autohaus AKER Premium Fahrzeuge"
         fill
         priority
-        className="object-cover object-[center_30%] md:object-center md:scale-105"
+        className="object-cover object-[center_30%] brightness-105 contrast-105 saturate-110 md:object-center"
         sizes="100vw"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/92 to-black/50 md:via-black/88 md:to-black/35" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-black/55 to-black/70" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(154,123,79,0.1),transparent_60%)]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/55 to-transparent md:via-black/45" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-black/20" />
 
       <div className="absolute left-0 top-0 hidden h-32 w-32 border-l-2 border-t-2 border-gold/30 md:block" />
       <div className="absolute bottom-0 right-0 hidden h-32 w-32 border-b-2 border-r-2 border-gold/30 md:block" />
