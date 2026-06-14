@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "title": "Autohaus AKER | Premium Fahrzeuge aus Korea",
+    "description": "Autohaus AKER – Ihr Spezialist für Premium- und Luxusfahrzeuge. Direktimport aus Korea. Niederkassel bei Köln."
+  },
+  "nav": {
+    "home": "Startseite",
+    "vehicles": "Fahrzeuge",
+    "about": "Über uns",
+    "service": "Service",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "sell": "Auto verkaufen"
+  },
+  "hero": {
+    "title": "Ihr Traumauto aus Korea.",
+    "subtitle": "Premium-Fahrzeuge – sicher importiert, fair bepreist. Autohaus AKER begleitet Sie von der Auswahl bis zur Zulassung.",
+    "cta": "Fahrzeuge entdecken",
+    "ctaSecondary": "Beratung anfragen"
+  },
+  "search": {
+    "title": "Fahrzeug finden",
+    "brand": "Marke",
+    "allBrands": "Alle Marken",
+    "status": "Status",
+    "allStatus": "Alle",
+    "search": "Suchen",
+    "placeholder": "Marke oder Modell..."
+  },
+  "status": {
+    "available": "Verfügbar",
+    "in_transit": "Unterwegs"
+  },
+  "transmission": {
+    "automatic": "Automatik",
+    "manual": "Schaltgetriebe"
+  },
+  "fuel": {
+    "petrol": "Benzin",
+    "diesel": "Diesel",
+    "electric": "Elektro",
+    "hybrid": "Hybrid",
+    "plugin_hybrid": "Plug-in-Hybrid"
+  },
+  "featured": {
+    "title": "Ausgewählte Fahrzeuge",
+    "subtitle": "Handverlesene Premium- und Luxusfahrzeuge aus unserem Bestand",
+    "viewAll": "Alle Fahrzeuge ansehen"
+  },
+  "whyUs": {
+    "title": "Warum Autohaus AKER?",
+    "items": {
+      "check": {
+        "title": "Fahrzeug-Check",
+        "desc": "Jedes Fahrzeug wird vor dem Import gründlich geprüft"
+      },
+      "shipping": {
+        "title": "Versand inklusive",
+        "desc": "Der Transport von Korea nach Deutschland ist im Service enthalten"
+      },
+      "customs": {
+        "title": "Verzollung inklusive",
+        "desc": "Alle Zollformalitäten übernehmen wir für Sie"
+      },
+      "price": {
+        "title": "Faire Preise",
+        "desc": "Transparente Preise ohne versteckte Kosten"
+      }
+    }
+  },
+  "howItWorks": {
+    "title": "So funktioniert's",
+    "subtitle": "In 4 Schritten zu Ihrem Traumauto",
+    "steps": {
+      "1": { "title": "Fahrzeug aussuchen", "desc": "Durchsuchen Sie unseren Katalog" },
+      "2": { "title": "Beratung & Check", "desc": "Persönliche Beratung und Fahrzeugprüfung" },
+      "3": { "title": "Kauf & Import", "desc": "Bezahlung, Versand und Verzollung" },
+      "4": { "title": "Ankunft in 8–12 Wochen", "desc": "Ihr Fahrzeug kommt in Deutschland an" }
+    },
+    "cta": "Jetzt Fahrzeuge entdecken"
+  },
+  "sellCta": {
+    "title": "Möchten Sie Ihr Auto verkaufen?",
+    "subtitle": "Wir machen Ihnen ein faires Angebot – schnell und unkompliziert.",
+    "button": "Jetzt Angebot anfordern"
+  },
+  "brands": {
+    "title": "Unsere Marken"
+  },
+  "vehicle": {
+    "priceOnRequest": "Preis auf Anfrage",
+    "contactForPrice": "Preis auf Anfrage – Kontaktieren Sie uns",
+    "year": "Baujahr",
+    "mileage": "Kilometerstand",
+    "transmission": "Getriebe",
+    "fuel": "Kraftstoff",
+    "status": "Status",
+    "description": "Beschreibung",
+    "contact": "Anfrage senden",
+    "whatsapp": "WhatsApp",
+    "call": "Anrufen",
+    "similar": "Weitere Fahrzeuge",
+    "noResults": "Keine Fahrzeuge gefunden",
+    "filters": "Filter"
+  },
+  "sell": {
+    "title": "Auto verkaufen",
+    "subtitle": "Füllen Sie das Formular aus – wir melden uns schnellstmöglich bei Ihnen.",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "brand": "Marke",
+    "model": "Modell",
+    "year": "Baujahr",
+    "mileage": "Kilometerstand",
+    "transmission": "Getriebe",
+    "fuel": "Kraftstoff",
+    "description": "Beschreibung",
+    "photo": "Foto (optional)",
+    "submit": "Angebot anfordern",
+    "success": "Vielen Dank! Wir melden uns in Kürze bei Ihnen.",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Wir freuen uns auf Ihre Nachricht",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "message": "Nachricht",
+    "submit": "Nachricht senden",
+    "success": "Nachricht gesendet!",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "address": "Adresse",
+    "hours": "Öffnungszeiten",
+    "phone_label": "Telefon",
+    "email_label": "E-Mail"
+  },
+  "about": {
+    "title": "Über uns",
+    "intro": "Autohaus AKER ist Ihr Partner für Premium- und Luxusfahrzeuge in Niederkassel bei Köln. Wir spezialisieren uns auf den Import hochwertiger Fahrzeuge direkt aus Korea und begleiten Sie durch den gesamten Prozess.",
+    "mission": "Unsere Mission",
+    "missionText": "Wir machen den Import von Premium-Fahrzeugen transparent, sicher und unkompliziert. Von der Fahrzeugauswahl über die Prüfung bis zur Zulassung in Deutschland – wir sind an Ihrer Seite.",
+    "values": "Unsere Werte",
+    "valuesItems": {
+      "quality": "Qualität – Nur geprüfte Fahrzeuge",
+      "trust": "Vertrauen – Ehrliche Beratung ohne Druck",
+      "service": "Service – Persönliche Betreuung von A bis Z"
+    }
+  },
+  "service": {
+    "title": "Unser Service",
+    "subtitle": "Vom Import bis zur Übergabe – alles aus einer Hand",
+    "import": {
+      "title": "Korea-Import",
+      "desc": "Wir importieren Premium-Fahrzeuge direkt aus Korea. Der gesamte Prozess dauert in der Regel 8–12 Wochen."
+    },
+    "check": {
+      "title": "Fahrzeugprüfung",
+      "desc": "Vor dem Kauf wird jedes Fahrzeug von unseren Partnern vor Ort gründlich geprüft."
+    },
+    "customs": {
+      "title": "Zoll & Papierkram",
+      "desc": "Verzollung, TÜV-Vorbereitung und alle Formalitäten übernehmen wir für Sie."
+    },
+    "delivery": {
+      "title": "Lieferung & Übergabe",
+      "desc": "Ihr Fahrzeug wird sicher nach Deutschland transportiert und an Sie übergeben."
+    },
+    "buySell": {
+      "title": "An- & Verkauf",
+      "desc": "Wir kaufen Ihr Fahrzeug zu fairen Preisen und verkaufen Premium-Autos aus unserem Bestand."
+    },
+    "detailing": {
+      "title": "Aufbereitung",
+      "desc": "Professionelle Fahrzeugaufbereitung für den perfekten ersten Eindruck."
+    }
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "items": {
+      "q1": { "q": "Wie lange dauert der Import aus Korea?", "a": "In der Regel 8–12 Wochen vom Kauf bis zur Ankunft in Deutschland." },
+      "q2": { "q": "Sind Versand und Verzollung im Preis enthalten?", "a": "Ja, bei Importfahrzeugen sind Versand und Verzollung in unserem Service enthalten." },
+      "q3": { "q": "Kann ich ein Fahrzeug reservieren, das noch unterwegs ist?", "a": "Ja, Fahrzeuge mit dem Status 'Unterwegs' können vorab reserviert werden." },
+      "q4": { "q": "Kaufen Sie auch Gebrauchtwagen an?", "a": "Ja! Nutzen Sie unser Formular 'Auto verkaufen' für ein unverbindliches Angebot." },
+      "q5": { "q": "Wo befindet sich Autohaus AKER?", "a": "Grandkaule 7, 53859 Niederkassel – in der Nähe von Köln." },
+      "q6": { "q": "Welche Zahlungsmöglichkeiten gibt es?", "a": "Wir besprechen die Zahlungsmodalitäten individuell mit Ihnen. Kontaktieren Sie uns für Details." }
+    }
+  },
+  "legal": {
+    "impressum": "Impressum",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "cookies": "Cookie-Einstellungen"
+  },
+  "footer": {
+    "tagline": "Premium-Fahrzeuge aus Korea. Import, Verkauf & Service.",
+    "navigation": "Navigation",
+    "legal": "Rechtliches",
+    "contact": "Kontakt",
+    "rights": "Alle Rechte vorbehalten.",
+    "disclaimer": "Fahrzeugimport aus Korea – individuelle Beratung empfohlen."
+  },
+  "cookie": {
+    "message": "Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen",
+    "settings": "Einstellungen"
+  },
+  "common": {
+    "learnMore": "Mehr erfahren",
+    "back": "Zurück",
+    "loading": "Laden...",
+    "error": "Fehler"
+  }
+}

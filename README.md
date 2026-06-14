@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Autohaus AKER
 
-## Getting Started
+Premium araç ithalat ve satış sitesi — [autohausaker.de](https://autohausaker.de)
 
-First, run the development server:
+## Teknoloji
+
+- **Next.js 16** (App Router)
+- **Supabase** (Veritabanı + Auth)
+- **Vercel Blob** (Görsel depolama)
+- **Resend** (E-posta)
+- **next-intl** (DE / EN / TR)
+
+## Kurulum
 
 ```bash
+npm install
+cp .env.example .env.local
+# .env.local dosyasını doldurun
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Site: http://localhost:3000/de  
+Admin: http://localhost:3000/admin
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Supabase Kurulumu
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. [supabase.com](https://supabase.com) üzerinde proje oluşturun
+2. SQL Editor'da `supabase/schema.sql` dosyasını çalıştırın
+3. İsteğe bağlı: `supabase/seed.sql` ile örnek araçları yükleyin
+4. Authentication > Users > yeni kullanıcı ekleyin
+5. Kullanıcı UUID'si ile `admin_profiles` tablosuna super_admin kaydı ekleyin (seed.sql'deki yorum satırına bakın)
+6. `.env.local` dosyasına Supabase URL ve anahtarlarını ekleyin
 
-## Learn More
+## Vercel Deploy
 
-To learn more about Next.js, take a look at the following resources:
+1. GitHub reposunu Vercel'e bağlayın: https://github.com/enesxunal/autohausaker
+2. Environment variables ekleyin (.env.example'daki tüm değerler)
+3. Deploy edin
+4. Domain: autohausaker.de → Vercel DNS ayarları
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Sayfalar
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Sayfa | URL |
+|-------|-----|
+| Anasayfa | /de, /en, /tr |
+| Araç kataloğu | /de/fahrzeuge |
+| İlan detay | /de/fahrzeuge/[slug] |
+| Aracını sat | /de/verkaufen |
+| Hakkımızda | /de/ueber-uns |
+| Hizmetler | /de/service |
+| SSS | /de/faq |
+| İletişim | /de/kontakt |
+| Impressum | /de/impressum |
+| Datenschutz | /de/datenschutz |
+| AGB | /de/agb |
+| Admin | /admin |
 
-## Deploy on Vercel
+## Admin Panel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Diller:** Almanca + Türkçe
+- **Roller:** super_admin, editor, viewer
+- **Özellikler:** İlan yönetimi, site ayarları, satış talepleri, kullanıcı yönetimi
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Not
+
+Supabase yapılandırılmadan site seed (örnek) verilerle çalışır. Production için Supabase zorunludur.

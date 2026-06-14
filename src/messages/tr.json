@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "title": "Autohaus AKER | Kore'den Premium Araçlar",
+    "description": "Autohaus AKER – Premium ve lüks araç uzmanınız. Kore'den direkt ithalat. Niederkassel, Köln yakını."
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "vehicles": "Araçlar",
+    "about": "Hakkımızda",
+    "service": "Hizmetler",
+    "faq": "SSS",
+    "contact": "İletişim",
+    "sell": "Aracını Sat"
+  },
+  "hero": {
+    "title": "Hayalinizdeki araç Kore'den.",
+    "subtitle": "Premium araçlar – güvenli ithalat, adil fiyatlar. Autohaus AKER, seçimden tescile kadar yanınızda.",
+    "cta": "Araçları Keşfet",
+    "ctaSecondary": "Danışmanlık Al"
+  },
+  "search": {
+    "title": "Araç Bul",
+    "brand": "Marka",
+    "allBrands": "Tüm Markalar",
+    "status": "Durum",
+    "allStatus": "Tümü",
+    "search": "Ara",
+    "placeholder": "Marka veya model..."
+  },
+  "status": {
+    "available": "Satışta",
+    "in_transit": "Yolda"
+  },
+  "transmission": {
+    "automatic": "Otomatik",
+    "manual": "Manuel"
+  },
+  "fuel": {
+    "petrol": "Benzin",
+    "diesel": "Dizel",
+    "electric": "Elektrik",
+    "hybrid": "Hibrit",
+    "plugin_hybrid": "Plug-in Hibrit"
+  },
+  "featured": {
+    "title": "Öne Çıkan Araçlar",
+    "subtitle": "Stoklarımızdan özenle seçilmiş premium ve lüks araçlar",
+    "viewAll": "Tüm Araçları Gör"
+  },
+  "whyUs": {
+    "title": "Neden Autohaus AKER?",
+    "items": {
+      "check": {
+        "title": "Araç Kontrolü",
+        "desc": "Her araç ithalat öncesi detaylı şekilde kontrol edilir"
+      },
+      "shipping": {
+        "title": "Nakliye Dahil",
+        "desc": "Kore'den Almanya'ya taşıma hizmetimize dahildir"
+      },
+      "customs": {
+        "title": "Gümrük Dahil",
+        "desc": "Tüm gümrük işlemlerini sizin için hallederiz"
+      },
+      "price": {
+        "title": "Adil Fiyatlar",
+        "desc": "Gizli maliyet olmadan şeffaf fiyatlandırma"
+      }
+    }
+  },
+  "howItWorks": {
+    "title": "Nasıl Çalışır?",
+    "subtitle": "4 adımda hayalinizdeki araca",
+    "steps": {
+      "1": { "title": "Araç Seçin", "desc": "Kataloğumuzu inceleyin" },
+      "2": { "title": "Danışmanlık & Kontrol", "desc": "Kişisel danışmanlık ve araç kontrolü" },
+      "3": { "title": "Satın Al & İthalat", "desc": "Ödeme, nakliye ve gümrük işlemleri" },
+      "4": { "title": "8–12 Haftada Teslim", "desc": "Aracınız Almanya'ya ulaşır" }
+    },
+    "cta": "Araçları Keşfet"
+  },
+  "sellCta": {
+    "title": "Aracınızı Satmak mı İstiyorsunuz?",
+    "subtitle": "Size adil bir teklif sunalım – hızlı ve kolay.",
+    "button": "Teklif Al"
+  },
+  "brands": {
+    "title": "Markalarımız"
+  },
+  "vehicle": {
+    "priceOnRequest": "Fiyat İçin İletişime Geçin",
+    "contactForPrice": "Fiyat için iletişime geçin",
+    "year": "Yıl",
+    "mileage": "Kilometre",
+    "transmission": "Vites",
+    "fuel": "Yakıt",
+    "status": "Durum",
+    "description": "Açıklama",
+    "contact": "Teklif İste",
+    "whatsapp": "WhatsApp",
+    "call": "Ara",
+    "similar": "Diğer Araçlar",
+    "noResults": "Araç bulunamadı",
+    "filters": "Filtreler"
+  },
+  "sell": {
+    "title": "Aracını Sat",
+    "subtitle": "Formu doldurun – en kısa sürede size dönüş yapalım.",
+    "name": "Ad Soyad",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "brand": "Marka",
+    "model": "Model",
+    "year": "Yıl",
+    "mileage": "Kilometre",
+    "transmission": "Vites",
+    "fuel": "Yakıt",
+    "description": "Açıklama",
+    "photo": "Fotoğraf (isteğe bağlı)",
+    "submit": "Teklif İste",
+    "success": "Teşekkürler! En kısa sürede sizinle iletişime geçeceğiz.",
+    "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Sizden haber almayı dört gözle bekliyoruz",
+    "name": "Ad Soyad",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "message": "Mesaj",
+    "submit": "Mesaj Gönder",
+    "success": "Mesaj gönderildi!",
+    "error": "Bir hata oluştu. Lütfen tekrar deneyin.",
+    "address": "Adres",
+    "hours": "Çalışma Saatleri",
+    "phone_label": "Telefon",
+    "email_label": "E-posta"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "intro": "Autohaus AKER, Niederkassel'de (Köln yakını) premium ve lüks araç partnerinizdir. Kore'den yüksek kaliteli araç ithalatında uzmanız ve tüm süreçte yanınızdayız.",
+    "mission": "Misyonumuz",
+    "missionText": "Premium araç ithalatını şeffaf, güvenli ve kolay hale getiriyoruz. Araç seçiminden kontrole, Almanya'da tescile kadar yanınızdayız.",
+    "values": "Değerlerimiz",
+    "valuesItems": {
+      "quality": "Kalite – Sadece kontrol edilmiş araçlar",
+      "trust": "Güven – Baskısız, dürüst danışmanlık",
+      "service": "Hizmet – A'dan Z'ye kişisel destek"
+    }
+  },
+  "service": {
+    "title": "Hizmetlerimiz",
+    "subtitle": "İthalattan teslimata – tek elden her şey",
+    "import": {
+      "title": "Kore İthalatı",
+      "desc": "Premium araçları doğrudan Kore'den ithal ediyoruz. Süreç genellikle 8–12 hafta sürer."
+    },
+    "check": {
+      "title": "Araç Kontrolü",
+      "desc": "Satın alma öncesi her araç yerinde detaylı şekilde kontrol edilir."
+    },
+    "customs": {
+      "title": "Gümrük & Evrak",
+      "desc": "Gümrük, TÜV hazırlığı ve tüm resmi işlemleri sizin için hallederiz."
+    },
+    "delivery": {
+      "title": "Teslimat",
+      "desc": "Aracınız güvenle Almanya'ya taşınır ve size teslim edilir."
+    },
+    "buySell": {
+      "title": "Alım & Satım",
+      "desc": "Aracınızı adil fiyata alır, stoklarımızdaki premium araçları satarız."
+    },
+    "detailing": {
+      "title": "Detailing",
+      "desc": "Profesyonel araç bakımı ile mükemmel ilk izlenim."
+    }
+  },
+  "faq": {
+    "title": "Sık Sorulan Sorular",
+    "items": {
+      "q1": { "q": "Kore'den ithalat ne kadar sürer?", "a": "Genellikle satın almadan Almanya'ya varışa 8–12 hafta." },
+      "q2": { "q": "Nakliye ve gümrük fiyata dahil mi?", "a": "Evet, ithalat araçlarında nakliye ve gümrük hizmetimize dahildir." },
+      "q3": { "q": "Yoldaki aracı rezerve edebilir miyim?", "a": "Evet, 'Yolda' durumundaki araçlar önceden rezerve edilebilir." },
+      "q4": { "q": "İkinci el araç da alıyor musunuz?", "a": "Evet! 'Aracını Sat' formunu kullanarak bağlayıcı olmayan teklif alabilirsiniz." },
+      "q5": { "q": "Autohaus AKER nerede?", "a": "Grandkaule 7, 53859 Niederkassel – Köln yakını." },
+      "q6": { "q": "Ödeme seçenekleri neler?", "a": "Ödeme koşullarını sizinle bireysel olarak görüşüyoruz. Detaylar için bize ulaşın." }
+    }
+  },
+  "legal": {
+    "impressum": "Künye",
+    "privacy": "Gizlilik",
+    "terms": "Şartlar",
+    "cookies": "Çerez Ayarları"
+  },
+  "footer": {
+    "tagline": "Kore'den premium araçlar. İthalat, satış ve servis.",
+    "navigation": "Menü",
+    "legal": "Yasal",
+    "contact": "İletişim",
+    "rights": "Tüm hakları saklıdır.",
+    "disclaimer": "Kore'den araç ithalatı – bireysel danışmanlık önerilir."
+  },
+  "cookie": {
+    "message": "Size en iyi deneyimi sunmak için çerezler kullanıyoruz.",
+    "accept": "Kabul Et",
+    "decline": "Reddet",
+    "settings": "Ayarlar"
+  },
+  "common": {
+    "learnMore": "Daha Fazla",
+    "back": "Geri",
+    "loading": "Yükleniyor...",
+    "error": "Hata"
+  }
+}
