@@ -122,6 +122,10 @@ CREATE POLICY "Admins can update sell requests" ON sell_requests
     EXISTS (SELECT 1 FROM admin_profiles WHERE id = auth.uid())
   );
 
+-- Kendi profilini okuyabilsin (ilk giriş için gerekli — döngüsel RLS engelini kaldırır)
+CREATE POLICY "Users can read own admin profile" ON admin_profiles
+  FOR SELECT USING (auth.uid() = id);
+
 CREATE POLICY "Admins can read profiles" ON admin_profiles
   FOR SELECT USING (
     EXISTS (SELECT 1 FROM admin_profiles WHERE id = auth.uid())
