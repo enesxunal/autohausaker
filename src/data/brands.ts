@@ -1,51 +1,51 @@
 /**
- * Marka logoları — kendi beyaz logolarınızı public/images/brands/ altına koyup
- * file yollarını güncelleyin.
+ * Marka logoları — public/images/brands/ (yerel dosyalar)
+ * Beyaz versiyonlarını aynı isimle değiştirmeniz yeterli.
  */
 export const LUXURY_BRANDS = [
   {
     id: "porsche",
     name: "Porsche",
-    file: "https://www.carlogos.org/car-logos/porsche-logo.png",
+    file: "/images/brands/porsche.png",
   },
   {
     id: "maserati",
     name: "Maserati",
-    file: "https://www.carlogos.org/car-logos/maserati-logo.png",
+    file: "/images/brands/maserati.png",
   },
   {
     id: "bentley",
     name: "Bentley",
-    file: "https://www.carlogos.org/car-logos/bentley-logo.png",
+    file: "/images/brands/bentley.png",
   },
   {
     id: "ferrari",
     name: "Ferrari",
-    file: "https://www.carlogos.org/car-logos/ferrari-logo.png",
+    file: "/images/brands/ferrari.png",
   },
   {
     id: "lamborghini",
     name: "Lamborghini",
-    file: "https://www.carlogos.org/car-logos/lamborghini-logo.png",
+    file: "/images/brands/lamborghini.png",
   },
   {
     id: "aston-martin",
     name: "Aston Martin",
-    file: "https://www.carlogos.org/car-logos/aston-martin-logo.png",
+    file: "/images/brands/aston-martin.svg",
   },
   {
     id: "mercedes",
     name: "Mercedes-Benz",
-    file: "https://www.carlogos.org/car-logos/mercedes-benz-logo.png",
+    file: "/images/brands/mercedes.png",
   },
   {
     id: "bmw",
     name: "BMW",
-    file: "https://www.carlogos.org/car-logos/bmw-logo.png",
+    file: "/images/brands/bmw.png",
   },
   {
     id: "audi",
     name: "Audi",
-    file: "https://www.carlogos.org/car-logos/audi-logo.png",
+    file: "/images/brands/audi.png",
   },
 ] as const;
