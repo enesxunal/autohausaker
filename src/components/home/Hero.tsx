@@ -5,7 +5,7 @@ import { ArrowRight, Phone } from "lucide-react";
 import { LUXURY_BRANDS } from "@/data/brands";
 import BrandLogo from "@/components/ui/BrandLogo";
 
-const HERO_IMAGE = "/images/autohausaker-banner.jpg";
+const HERO_IMAGE = "/images/autohausaker-banner.jpg?v=3";
 
 export default async function Hero() {
   const t = await getTranslations("hero");
@@ -17,6 +17,7 @@ export default async function Hero() {
         alt="Autohaus AKER Premium Fahrzeuge"
         fill
         priority
+        unoptimized
         className="object-cover object-[center_30%] brightness-105 contrast-105 saturate-110 md:object-center"
         sizes="100vw"
       />
