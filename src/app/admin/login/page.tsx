@@ -1,13 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { useAdminLocale } from "@/components/admin/AdminLocaleProvider";
 
 export default function AdminLoginPage() {
   const { t } = useAdminLocale();
-  const router = useRouter();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -22,10 +20,11 @@ export default function AdminLoginPage() {
 
     try {
       const supabase = createClient();
-      const { error: authError } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
+      const { data: authData, error: authError } =
+        await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
 
       if (authError) {
         setError(authError.message || t("loginError"));
@@ -33,8 +32,26 @@ export default function AdminLoginPage() {
         return;
       }
 
-      router.push("/admin");
-      router.refresh();
+      if (!authData.user) {
+        setError(t("loginError"));
+        setLoading(false);
+        return;
+      }
+
+      const { data: profile } = await supabase
+        .from("admin_profiles")
+        .select("id")
+        .eq("id", authData.user.id)
+        .maybeSingle();
+
+      if (!profile) {
+        await supabase.auth.signOut();
+        setError(t("profileMissing"));
+        setLoading(false);
+        return;
+      }
+
+      window.location.href = "/admin";
     } catch (err) {
       setError(
         err instanceof Error

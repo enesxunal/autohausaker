@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { put } from "@vercel/blob";
 import { Resend } from "resend";
-import { getSupabaseServiceKey, getSupabaseUrl, isSupabaseConfigured } from "@/lib/supabase/env";
+import { z } from "zod";
+import { getSupabaseServiceKey, isSupabaseConfigured } from "@/lib/supabase/env";
 
 const schema = z.object({
   name: z.string().min(1),

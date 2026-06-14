@@ -45,6 +45,8 @@ export const adminMessages = {
     viewer: "Betrachter",
     permissions: "Berechtigungen",
     loginError: "Anmeldung fehlgeschlagen",
+    profileMissing:
+      "Konto vorhanden, aber kein Admin-Profil. Bitte admin_profiles in Supabase anlegen.",
     uploadImage: "Bild hochladen",
     actions: "Aktionen",
     confirmDelete: "Wirklich löschen?",
@@ -102,6 +104,8 @@ export const adminMessages = {
     viewer: "İzleyici",
     permissions: "Yetkiler",
     loginError: "Giriş başarısız",
+    profileMissing:
+      "Hesap var ama admin profili yok. Supabase'de admin_profiles kaydı oluşturun.",
     uploadImage: "Görsel yükle",
     actions: "İşlemler",
     confirmDelete: "Silmek istediğinize emin misiniz?",
