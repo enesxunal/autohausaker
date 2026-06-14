@@ -55,6 +55,10 @@ export const adminMessages = {
     imageHint: "Empfohlen: 1920×1080 px (16:9), JPG/PNG/WebP, max. 5 MB pro Bild",
     dragHint: "Reihenfolge per Drag & Drop ändern — erstes Bild = Titelbild",
     coverImage: "Titelbild",
+    emptyVehiclesHint:
+      "Die Website zeigt Demo-Fahrzeuge. Importieren Sie sie in die Datenbank, um sie hier zu verwalten.",
+    importSeedVehicles: "Demo-Fahrzeuge importieren",
+    importError: "Import fehlgeschlagen",
     actions: "Aktionen",
     confirmDelete: "Wirklich löschen?",
     name: "Name",
@@ -121,6 +125,10 @@ export const adminMessages = {
     imageHint: "Önerilen: 1920×1080 px (16:9), JPG/PNG/WebP, en fazla 5 MB",
     dragHint: "Sürükleyerek sıralayın — ilk görsel kapak fotoğrafı",
     coverImage: "Kapak görseli",
+    emptyVehiclesHint:
+      "Sitede demo araçlar görünüyor. Buradan yönetmek için veritabanına aktarın.",
+    importSeedVehicles: "Demo araçları içe aktar",
+    importError: "İçe aktarma başarısız",
     actions: "İşlemler",
     confirmDelete: "Silmek istediğinize emin misiniz?",
     name: "Ad",
