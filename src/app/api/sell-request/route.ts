@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { put } from "@vercel/blob";
 import { Resend } from "resend";
-import { z } from "zod";
+import { getSupabaseServiceKey, getSupabaseUrl, isSupabaseConfigured } from "@/lib/supabase/env";
 
 const schema = z.object({
   name: z.string().min(1),
@@ -43,10 +43,7 @@ export async function POST(request: Request) {
       imageUrl = blob.url;
     }
 
-    if (
-      process.env.NEXT_PUBLIC_SUPABASE_URL &&
-      process.env.SUPABASE_SERVICE_ROLE_KEY
-    ) {
+    if (isSupabaseConfigured() && getSupabaseServiceKey()) {
       const { createServiceClient } = await import("@/lib/supabase/server");
       const supabase = await createServiceClient();
       await supabase.from("sell_requests").insert({
