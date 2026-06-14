@@ -3,12 +3,7 @@ import type { FuelType, SiteSettings, Transmission, Vehicle, VehicleStatus } fro
 import { DEFAULT_SETTINGS } from "./types";
 import { SEED_VEHICLES } from "@/data/seed-vehicles";
 
-function isSupabaseConfigured() {
-  return Boolean(
-    process.env.NEXT_PUBLIC_SUPABASE_URL &&
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  );
-}
+import { isSupabaseConfigured } from "@/lib/supabase/env";
 
 export async function getSettings(): Promise<SiteSettings> {
   if (!isSupabaseConfigured()) return DEFAULT_SETTINGS;

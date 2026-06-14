@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import AdminSidebar from "@/components/admin/AdminSidebar";
+import { isSupabaseConfigured } from "@/lib/supabase/env";
 
 export async function AdminAuthLayout({
   children,
@@ -9,9 +10,7 @@ export async function AdminAuthLayout({
   children: React.ReactNode;
   requireSuperAdmin?: boolean;
 }) {
-  const supabaseConfigured = Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL);
-
-  if (!supabaseConfigured) {
+  if (!isSupabaseConfigured()) {
     return (
       <div className="flex flex-1 items-center justify-center p-8">
         <div className="max-w-md rounded-sm border border-border bg-surface p-8 text-center">

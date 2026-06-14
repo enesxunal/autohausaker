@@ -20,20 +20,29 @@ export default function AdminLoginPage() {
     const email = form.get("email") as string;
     const password = form.get("password") as string;
 
-    const supabase = createClient();
-    const { error: authError } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+    try {
+      const supabase = createClient();
+      const { error: authError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
 
-    if (authError) {
-      setError(t("loginError"));
+      if (authError) {
+        setError(authError.message || t("loginError"));
+        setLoading(false);
+        return;
+      }
+
+      router.push("/admin");
+      router.refresh();
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Supabase bağlantısı kurulamadı. Vercel ortam değişkenlerini kontrol edin."
+      );
       setLoading(false);
-      return;
     }
-
-    router.push("/admin");
-    router.refresh();
   };
 
   return (
