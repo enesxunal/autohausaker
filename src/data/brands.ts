@@ -31,7 +31,7 @@ export const LUXURY_BRANDS = [
   {
     id: "aston-martin",
     name: "Aston Martin",
-    file: "/images/brands/aston-martin.svg",
+    file: "/images/brands/aston-martin.png",
   },
   {
     id: "mercedes",
