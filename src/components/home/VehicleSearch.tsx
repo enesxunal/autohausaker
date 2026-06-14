@@ -38,7 +38,7 @@ export default function VehicleSearch() {
 
         <form
           onSubmit={handleSearch}
-          className="premium-panel mx-auto grid max-w-5xl gap-5 p-8 md:grid-cols-4 md:p-10"
+          className="premium-panel mx-auto grid max-w-5xl gap-4 p-5 sm:gap-5 sm:p-8 md:grid-cols-4 md:p-10"
         >
           <div>
             <label className="mb-2 block text-[10px] font-bold uppercase tracking-[0.2em] text-gold/80">

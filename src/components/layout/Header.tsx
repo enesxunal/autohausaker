@@ -17,6 +17,13 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   const links = [
     { href: "/fahrzeuge" as const, label: t("vehicles") },
     { href: "/ueber-uns" as const, label: t("about") },
@@ -33,17 +40,16 @@ export default function Header() {
           : "border-b border-gold/10 bg-black/70 backdrop-blur-md"
       }`}
     >
-      {/* Top gold accent line */}
       <div className="h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
 
-      <div className="container-narrow flex items-center justify-between px-4 py-4 md:px-8 md:py-5">
-        <Link href="/" className="group flex items-center gap-3">
+      <div className="container-narrow flex items-center justify-between px-4 py-3 md:px-8 md:py-5">
+        <Link href="/" className="group flex items-center gap-2 md:gap-3" onClick={() => setOpen(false)}>
           <div className="hidden h-10 w-px gold-gradient-bg md:block" />
           <div>
-            <span className="block font-display text-xl font-semibold uppercase tracking-[0.25em] gold-gradient-text md:text-2xl">
+            <span className="block font-display text-lg font-semibold uppercase tracking-[0.2em] gold-gradient-text md:text-2xl md:tracking-[0.25em]">
               Autohaus
             </span>
-            <span className="block text-[10px] font-bold uppercase tracking-[0.55em] text-foreground/90">
+            <span className="block text-[9px] font-bold uppercase tracking-[0.45em] text-foreground/90 md:text-[10px] md:tracking-[0.55em]">
               AKER
             </span>
           </div>
@@ -61,38 +67,46 @@ export default function Header() {
           <LanguageSwitcher />
         </nav>
 
-        <div className="flex items-center gap-4 lg:hidden">
+        <div className="flex items-center gap-3 lg:hidden">
           <LanguageSwitcher />
           <button
             onClick={() => setOpen(!open)}
             className="rounded-sm border border-gold/20 p-2 text-gold"
             aria-label="Menu"
+            aria-expanded={open}
           >
-            {open ? <X size={22} /> : <Menu size={22} />}
+            {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
       {open && (
-        <nav className="border-t border-gold/15 bg-black/98 px-4 py-6 lg:hidden">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="block border-b border-gold/5 py-4 text-sm uppercase tracking-[0.15em] text-muted hover:text-gold"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            href="/verkaufen"
+        <>
+          <div
+            className="fixed inset-0 top-[57px] z-40 bg-black/60 lg:hidden"
             onClick={() => setOpen(false)}
-            className="btn-primary mt-6 w-full text-[10px]"
-          >
-            {t("sell")}
-          </Link>
-        </nav>
+            aria-hidden
+          />
+          <nav className="fixed left-0 right-0 top-[57px] z-50 max-h-[calc(100vh-57px)] overflow-y-auto border-t border-gold/15 bg-black px-4 py-6 lg:hidden">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="block border-b border-gold/5 py-4 text-sm uppercase tracking-[0.12em] text-muted hover:text-gold"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/verkaufen"
+              onClick={() => setOpen(false)}
+              className="btn-primary mt-6 w-full text-[10px]"
+            >
+              {t("sell")}
+            </Link>
+          </nav>
+        </>
       )}
     </header>
   );

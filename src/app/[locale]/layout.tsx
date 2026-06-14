@@ -5,6 +5,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/layout/CookieBanner";
+import MobileActionBar from "@/components/layout/MobileActionBar";
 import { getSettings } from "@/lib/data";
 
 export function generateStaticParams() {
@@ -31,8 +32,9 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <Header />
-      <main>{children}</main>
+      <main className="overflow-x-hidden pb-[52px] lg:pb-0">{children}</main>
       <Footer settings={settings} />
+      <MobileActionBar />
       <CookieBanner />
     </NextIntlClientProvider>
   );

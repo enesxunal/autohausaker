@@ -20,17 +20,17 @@ export default async function SellCta() {
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/70" />
           </div>
 
-          <div className="gold-v-frame relative px-8 py-16 text-center md:px-20 md:py-24">
-            <p className="text-[10px] font-bold uppercase tracking-[0.45em] gold-gradient-text">
+          <div className="gold-v-frame relative px-5 py-12 text-center sm:px-8 md:px-20 md:py-24">
+            <p className="text-[9px] font-bold uppercase tracking-[0.35em] gold-gradient-text md:text-[10px] md:tracking-[0.45em]">
               An & Verkauf
             </p>
-            <h2 className="font-display mx-auto mt-4 max-w-2xl text-4xl font-semibold uppercase tracking-wide md:text-5xl">
+            <h2 className="font-display mx-auto mt-4 max-w-2xl text-2xl font-semibold uppercase tracking-wide sm:text-3xl md:text-5xl">
               <span className="gold-gradient-text">{t("title")}</span>
             </h2>
-            <p className="relative mx-auto mt-6 max-w-xl text-lg text-muted">
+            <p className="relative mx-auto mt-4 max-w-xl text-base text-muted md:mt-6 md:text-lg">
               {t("subtitle")}
             </p>
-            <Link href="/verkaufen" className="btn-primary relative mt-10">
+            <Link href="/verkaufen" className="btn-primary relative mt-8 w-full sm:mt-10 sm:w-auto">
               {t("button")}
               <ArrowRight size={16} />
             </Link>

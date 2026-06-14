@@ -25,7 +25,7 @@ export default function CookieBanner() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-gold/20 bg-black/95 p-4 shadow-[0_-8px_32px_rgba(0,0,0,0.5)] backdrop-blur-xl md:p-6">
+    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-gold/20 bg-black/95 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] shadow-[0_-8px_32px_rgba(0,0,0,0.5)] backdrop-blur-xl md:p-6 lg:bottom-auto lg:pb-4">
       <div className="gold-line-h absolute left-0 right-0 top-0" />
       <div className="container-narrow flex flex-col items-center justify-between gap-4 md:flex-row">
         <p className="text-sm text-muted">{t("message")}</p>

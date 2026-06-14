@@ -40,6 +40,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -47,6 +48,8 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
   background-image:
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(154, 123, 79, 0.07), transparent),
     radial-gradient(ellipse 60% 40% at 100% 100%, rgba(107, 86, 53, 0.05), transparent);
@@ -137,7 +140,7 @@ body {
 }
 
 .section-padding {
-  @apply px-4 py-20 md:px-8 md:py-28 lg:px-16;
+  @apply px-4 py-14 md:px-8 md:py-28 lg:px-16;
 }
 
 .container-narrow {

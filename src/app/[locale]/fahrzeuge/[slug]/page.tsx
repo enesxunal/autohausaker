@@ -72,8 +72,8 @@ export default async function VehicleDetailPage({ params }: PageProps) {
           <div>
             <StatusBadge status={vehicle.status} />
             <p className="mt-4 text-sm uppercase tracking-wider text-gold">{vehicle.brand}</p>
-            <h1 className="mt-2 text-3xl font-bold md:text-4xl">{vehicle.title}</h1>
-            <p className="mt-6 text-3xl font-bold text-gold">
+            <h1 className="mt-2 text-2xl font-bold sm:text-3xl md:text-4xl">{vehicle.title}</h1>
+            <p className="mt-4 text-2xl font-bold text-gold md:mt-6 md:text-3xl">
               {price ?? t("priceOnRequest")}
             </p>
 
@@ -104,17 +104,17 @@ export default async function VehicleDetailPage({ params }: PageProps) {
               )}
             </dl>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4">
               <a
                 href={whatsappLink(settings.whatsapp, waMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary"
+                className="btn-primary w-full sm:w-auto"
               >
                 <MessageCircle size={18} />
                 {t("whatsapp")}
               </a>
-              <a href={phoneLink(settings.phone)} className="btn-outline">
+              <a href={phoneLink(settings.phone)} className="btn-outline w-full sm:w-auto">
                 <Phone size={18} />
                 {t("call")}
               </a>
