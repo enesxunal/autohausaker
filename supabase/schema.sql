@@ -4,8 +4,8 @@
 -- Site ayarları (tek satır)
 CREATE TABLE IF NOT EXISTS site_settings (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  phone TEXT DEFAULT '+49 176 32510469',
-  whatsapp TEXT DEFAULT '+49 176 32510469',
+  phone TEXT DEFAULT '+49 1522 1597074',
+  whatsapp TEXT DEFAULT '+49 1522 1597074',
   email TEXT DEFAULT 'info@autohausaker.de',
   address TEXT DEFAULT 'Grandkaule 7, 53859 Niederkassel',
   company_name TEXT DEFAULT 'Autohaus AKER',

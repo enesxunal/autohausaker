@@ -4,11 +4,13 @@ import { getTranslations } from "next-intl/server";
 import { ArrowRight, Phone } from "lucide-react";
 import { LUXURY_BRANDS } from "@/data/brands";
 import BrandLogo from "@/components/ui/BrandLogo";
+import { getSettings, phoneLink } from "@/lib/data";
 
 const HERO_IMAGE = "/images/autohausaker-banner.jpg?v=3";
 
 export default async function Hero() {
   const t = await getTranslations("hero");
+  const settings = await getSettings();
 
   return (
     <section className="relative min-h-[78vh] overflow-hidden md:min-h-[92vh]">
@@ -69,8 +71,8 @@ export default async function Hero() {
             <Phone size={18} className="shrink-0 text-gold" />
             <div>
               <p className="text-[10px] uppercase tracking-widest text-muted">Hotline</p>
-              <a href="tel:+4917632510469" className="font-semibold gold-gradient-text">
-                +49 176 32510469
+              <a href={phoneLink(settings.phone)} className="font-semibold gold-gradient-text">
+                {settings.phone}
               </a>
             </div>
           </div>

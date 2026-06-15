@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
+import { siteMetadata } from "@/lib/site-config";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,15 +14,13 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
 });
 
-export const metadata: Metadata = {
-  title: "Autohaus AKER",
-  description: "Premium Fahrzeuge aus Korea",
+export const metadata: Metadata = siteMetadata({
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: "/favicon.svg",
     apple: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
-};
+});
 
 export const viewport = {
   width: "device-width",

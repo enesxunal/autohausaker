@@ -75,8 +75,8 @@ export interface AdminProfile {
 
 export const DEFAULT_SETTINGS: SiteSettings = {
   id: "00000000-0000-0000-0000-000000000001",
-  phone: "+49 176 32510469",
-  whatsapp: "+49 176 32510469",
+  phone: "+49 1522 1597074",
+  whatsapp: "+49 1522 1597074",
   email: "info@autohausaker.de",
   address: "Grandkaule 7, 53859 Niederkassel",
   company_name: "Autohaus AKER",
