@@ -84,7 +84,7 @@ export default async function Hero() {
           <div className="hidden h-8 w-px bg-gold/15 md:block" />
           <div>
             <p className="text-[10px] uppercase tracking-widest text-muted">Import</p>
-            <p className="text-sm gold-gradient-text">Korea → Deutschland</p>
+            <p className="text-sm gold-gradient-text">Import → Deutschland</p>
           </div>
         </div>
       </div>

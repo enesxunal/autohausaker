@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Autohaus AKER | Kore'den Premium Araçlar",
-    "description": "Autohaus AKER – Premium ve lüks araç uzmanınız. Kore'den direkt ithalat. Niederkassel, Köln yakını."
+    "title": "Autohaus AKER | Premium Araç İthalatı",
+    "description": "Autohaus AKER – Premium araç ithalatında danışmanınız. Kişisel ithalat sürecinizde yanınızdayız. Niederkassel, Köln yakını."
   },
   "nav": {
     "home": "Ana Sayfa",
@@ -13,8 +13,8 @@
     "sell": "Aracını Sat"
   },
   "hero": {
-    "title": "Hayalinizdeki araç Kore'den.",
-    "subtitle": "Premium araçlar – güvenli ithalat, adil fiyatlar. Autohaus AKER, seçimden tescile kadar yanınızda.",
+    "title": "Hayalinizdeki araç, ithalat ile.",
+    "subtitle": "Premium araçlar – kişisel ithalat ve tescile kadar sizi adım adım danışmanlık ve eşlik ediyoruz.",
     "cta": "Araçları Keşfet",
     "ctaSecondary": "Danışmanlık Al"
   },
@@ -56,7 +56,7 @@
       },
       "shipping": {
         "title": "Nakliye Desteği",
-        "desc": "Kore'den Almanya'ya taşımanın organizasyonu ve desteği"
+        "desc": "Uluslararası araç taşımasının organizasyonu ve desteği"
       },
       "customs": {
         "title": "Gümrük Desteği",
@@ -138,7 +138,7 @@
   },
   "about": {
     "title": "Hakkımızda",
-    "intro": "Autohaus AKER, Niederkassel'de (Köln yakını) premium ve lüks araç partnerinizdir. Kore'den yüksek kaliteli araç ithalatında uzmanız ve tüm süreçte yanınızdayız.",
+    "intro": "Autohaus AKER, Niederkassel'de (Köln yakını) premium ve lüks araçlarda bağımsız danışman ve aracınızdır. Yurtdışındaki kaliteli araçları aracılık eder ve kişisel ithalat sürecinizde yanınızda oluruz.",
     "mission": "Misyonumuz",
     "missionText": "Premium araç ithalatını şeffaf, güvenli ve kolay hale getiriyoruz. Araç seçiminden kontrole, Almanya'da tescile kadar yanınızdayız.",
     "values": "Değerlerimiz",
@@ -152,8 +152,8 @@
     "title": "Hizmetlerimiz",
     "subtitle": "İthalattan teslimata – tek elden her şey",
     "import": {
-      "title": "Kore İthalatı",
-      "desc": "Premium araçları doğrudan Kore'den ithal ediyoruz. Süreç genellikle 8–12 hafta sürer."
+      "title": "İthalat Danışmanlığı",
+      "desc": "Premium araç ithalatında danışmanlık ve eşlik sağlıyoruz. Süreç genellikle 8–12 hafta sürer."
     },
     "check": {
       "title": "Araç Kontrolü",
@@ -179,7 +179,7 @@
   "faq": {
     "title": "Sık Sorulan Sorular",
     "items": {
-      "q1": { "q": "Kore'den ithalat ne kadar sürer?", "a": "Genellikle satın almadan Almanya'ya varışa 8–12 hafta." },
+      "q1": { "q": "Araç ithalatı ne kadar sürer?", "a": "Genellikle satın almadan Almanya'ya varışa 8–12 hafta." },
       "q2": { "q": "Nakliye ve gümrük fiyata dahil mi?", "a": "Evet, ithalat araçlarında nakliye ve gümrük hizmetimize dahildir." },
       "q3": { "q": "Yoldaki aracı rezerve edebilir miyim?", "a": "Evet, 'Yolda' durumundaki araçlar önceden rezerve edilebilir." },
       "q4": { "q": "İkinci el araç da alıyor musunuz?", "a": "Evet! 'Aracını Sat' formunu kullanarak bağlayıcı olmayan teklif alabilirsiniz." },
@@ -194,12 +194,12 @@
     "cookies": "Çerez Ayarları"
   },
   "footer": {
-    "tagline": "Kore'den premium araçlar. İthalat, satış ve servis.",
+    "tagline": "Premium araç ithalatı. Danışmanlık, aracılık ve eşlik.",
     "navigation": "Menü",
     "legal": "Yasal",
     "contact": "İletişim",
     "rights": "Tüm hakları saklıdır.",
-    "disclaimer": "Kore'den araç ithalatı – bireysel danışmanlık önerilir."
+    "disclaimer": "Araç ithalatı – bireysel danışmanlık önerilir."
   },
   "cookie": {
     "message": "Size en iyi deneyimi sunmak için çerezler kullanıyoruz.",

@@ -11,9 +11,9 @@ INSERT INTO vehicles (slug, brand, model, title, year, mileage, transmission, fu
  'Sport Chrono paketi ile Porsche 911 Carrera S.',
  ARRAY['https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=80'], true, true),
 ('bmw-m4-competition-2023', 'BMW', 'M4 Competition', 'BMW M4 Competition xDrive', 2023, 8900, 'automatic', 'petrol', 89900, 'in_transit',
- 'BMW M4 Competition — Import aus Korea unterwegs.',
- 'BMW M4 Competition — import from Korea on the way.',
- 'BMW M4 Competition — Kore''den ithalat yolda.',
+ 'BMW M4 Competition — vermittelter Import unterwegs.',
+ 'BMW M4 Competition — import in transit.',
+ 'BMW M4 Competition — ithalat sürecinde.',
  ARRAY['https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1200&q=80'], true, true)
 ON CONFLICT (slug) DO NOTHING;
 

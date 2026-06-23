@@ -27,10 +27,10 @@ export default async function AgbPage() {
           zustande.
         </p>
 
-        <h2>§ 3 Fahrzeugimport aus Korea</h2>
+        <h2>§ 3 Fahrzeugimport</h2>
         <p>
           {settings.company_name} erbringt Beratungs- und Vermittlungsleistungen beim Import von
-          Fahrzeugen aus Korea. Die voraussichtliche Bearbeitungszeit beträgt 8–12 Wochen ab
+          Fahrzeugen. Die voraussichtliche Bearbeitungszeit beträgt 8–12 Wochen ab
           Vertragsabschluss. Transport und Verzollung werden im Rahmen unserer
           Unterstützungsleistung organisiert und begleitet; der Import erfolgt in Ihrem Namen als
           Kunde, sofern nicht anders vereinbart.

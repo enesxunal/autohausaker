@@ -95,11 +95,11 @@ export const SEED_VEHICLES: Vehicle[] = [
     price: 89900,
     status: "in_transit",
     description_de:
-      "BMW M4 Competition xDrive — vermittelter Import aus Korea unterwegs. Erwartete Ankunft in 8–12 Wochen. Jetzt reservieren!",
+      "BMW M4 Competition xDrive — vermittelter Import unterwegs. Erwartete Ankunft in 8–12 Wochen. Jetzt reservieren!",
     description_en:
-      "BMW M4 Competition xDrive — import from Korea on the way. Expected arrival in 8–12 weeks. Reserve now!",
+      "BMW M4 Competition xDrive — import in transit. Expected arrival in 8–12 weeks. Reserve now!",
     description_tr:
-      "BMW M4 Competition xDrive — Kore'den ithalat yolda. Tahmini varış 8–12 hafta. Şimdi rezerve edin!",
+      "BMW M4 Competition xDrive — ithalat sürecinde. Tahmini varış 8–12 hafta. Şimdi rezerve edin!",
     images: [
       "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1200&q=80",
     ],
@@ -147,11 +147,11 @@ export const SEED_VEHICLES: Vehicle[] = [
     price: 64900,
     status: "in_transit",
     description_de:
-      "Genesis GV80 — Premium-SUV zur Vermittlung aus Korea. Volle Ausstattung, Nappa-Leder, Head-up-Display.",
+      "Genesis GV80 — Premium-SUV zur Vermittlung per Import. Volle Ausstattung, Nappa-Leder, Head-up-Display.",
     description_en:
-      "Genesis GV80 — premium SUV imported directly from Korea. Full equipment, Nappa leather, head-up display.",
+      "Genesis GV80 — premium SUV available for import. Full equipment, Nappa leather, head-up display.",
     description_tr:
-      "Genesis GV80 — Kore'den direkt ithal premium SUV. Tam donanım, Nappa deri, head-up display.",
+      "Genesis GV80 — ithalat için premium SUV. Tam donanım, Nappa deri, head-up display.",
     images: [
       "https://images.unsplash.com/photo-1619767886555-ef0697657a10?w=1200&q=80",
     ],

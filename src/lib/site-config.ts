@@ -4,9 +4,9 @@ export const SITE_URL = "https://autohausaker.de";
 export const DEFAULT_PHONE = "+49 1522 1597074";
 export const GOOGLE_SITE_VERIFICATION = "EDqrupOD6fEwuRmdgifHwQ5NzB0iI6vmg-NfbSyKN10";
 
-const OG_TITLE = "Autohaus AKER | Premium Fahrzeuge aus Korea";
+const OG_TITLE = "Autohaus AKER | Premium Fahrzeugimport";
 const OG_DESCRIPTION =
-  "Autohaus AKER – Ihr Berater und Vermittler für Premium-Importe aus Korea. Wir begleiten Sie bei Ihrem persönlichen Importprozess. Niederkassel bei Köln.";
+  "Autohaus AKER – Ihr Berater und Vermittler für Premium-Fahrzeugimport. Wir begleiten Sie bei Ihrem persönlichen Importprozess. Niederkassel bei Köln.";
 
 export function siteMetadata(overrides?: Partial<Metadata>): Metadata {
   return {
@@ -31,7 +31,7 @@ export function siteMetadata(overrides?: Partial<Metadata>): Metadata {
           url: "/images/autohausaker-banner.jpg",
           width: 1920,
           height: 1080,
-          alt: "Autohaus AKER – Premium Fahrzeuge aus Korea",
+          alt: "Autohaus AKER – Premium Fahrzeugimport",
         },
       ],
     },

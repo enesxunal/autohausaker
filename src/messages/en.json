@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Autohaus AKER | Premium Vehicles from Korea",
-    "description": "Autohaus AKER – Your specialist for premium and luxury vehicles. Direct import from Korea. Niederkassel near Cologne."
+    "title": "Autohaus AKER | Premium Vehicle Import",
+    "description": "Autohaus AKER – Your advisor for premium vehicle import. We guide you through your personal import process. Niederkassel near Cologne."
   },
   "nav": {
     "home": "Home",
@@ -13,8 +13,8 @@
     "sell": "Sell Your Car"
   },
   "hero": {
-    "title": "Your dream car from Korea.",
-    "subtitle": "Premium vehicles – safely imported, fairly priced. Autohaus AKER guides you from selection to registration.",
+    "title": "Your dream car by import.",
+    "subtitle": "Premium vehicles – we advise, broker and guide you step by step through your personal import to registration.",
     "cta": "Browse Vehicles",
     "ctaSecondary": "Request Consultation"
   },
@@ -56,7 +56,7 @@
       },
       "shipping": {
         "title": "Transport Support",
-        "desc": "Support and coordination of transport from Korea to Germany"
+        "desc": "Support and coordination of international vehicle transport"
       },
       "customs": {
         "title": "Customs Support",
@@ -138,7 +138,7 @@
   },
   "about": {
     "title": "About Us",
-    "intro": "Autohaus AKER is your partner for premium and luxury vehicles in Niederkassel near Cologne. We specialize in importing high-quality vehicles directly from Korea and guide you through the entire process.",
+    "intro": "Autohaus AKER is your independent advisor and broker for premium and luxury vehicles in Niederkassel near Cologne. We broker high-quality vehicles abroad and guide you through your personal import process.",
     "mission": "Our Mission",
     "missionText": "We make importing premium vehicles transparent, safe and straightforward. From vehicle selection and inspection to registration in Germany – we're by your side.",
     "values": "Our Values",
@@ -152,8 +152,8 @@
     "title": "Our Services",
     "subtitle": "From import to handover – everything from one source",
     "import": {
-      "title": "Korea Import",
-      "desc": "We import premium vehicles directly from Korea. The entire process typically takes 8–12 weeks."
+      "title": "Import Advisory",
+      "desc": "We advise and guide you through premium vehicle import. The process typically takes 8–12 weeks."
     },
     "check": {
       "title": "Vehicle Inspection",
@@ -179,7 +179,7 @@
   "faq": {
     "title": "Frequently Asked Questions",
     "items": {
-      "q1": { "q": "How long does import from Korea take?", "a": "Typically 8–12 weeks from purchase to arrival in Germany." },
+      "q1": { "q": "How long does a vehicle import take?", "a": "Typically 8–12 weeks from purchase to arrival in Germany." },
       "q2": { "q": "Are shipping and customs included in the price?", "a": "Yes, for import vehicles shipping and customs are included in our service." },
       "q3": { "q": "Can I reserve a vehicle that's still in transit?", "a": "Yes, vehicles with 'In Transit' status can be reserved in advance." },
       "q4": { "q": "Do you also buy used cars?", "a": "Yes! Use our 'Sell Your Car' form for a non-binding offer." },
@@ -194,12 +194,12 @@
     "cookies": "Cookie Settings"
   },
   "footer": {
-    "tagline": "Premium vehicles from Korea. Import, sales & service.",
+    "tagline": "Premium vehicle import. Advisory, brokerage & guidance.",
     "navigation": "Navigation",
     "legal": "Legal",
     "contact": "Contact",
     "rights": "All rights reserved.",
-    "disclaimer": "Vehicle import from Korea – individual consultation recommended."
+    "disclaimer": "Vehicle import – individual consultation recommended."
   },
   "cookie": {
     "message": "We use cookies to provide you with the best experience on our website.",

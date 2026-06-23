@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Autohaus AKER | Premium Fahrzeuge aus Korea",
-    "description": "Autohaus AKER – Ihr Berater und Vermittler für Premium-Importe aus Korea. Wir begleiten Sie bei Ihrem persönlichen Importprozess. Niederkassel bei Köln."
+    "title": "Autohaus AKER | Premium Fahrzeugimport",
+    "description": "Autohaus AKER – Ihr Berater und Vermittler für Premium-Fahrzeugimport. Wir begleiten Sie bei Ihrem persönlichen Importprozess. Niederkassel bei Köln."
   },
   "nav": {
     "home": "Startseite",
@@ -13,8 +13,8 @@
     "sell": "Auto verkaufen"
   },
   "hero": {
-    "title": "Ihr Traumauto aus Korea.",
-    "subtitle": "Premium-Fahrzeuge aus Korea – wir beraten, vermitteln und begleiten Sie Schritt für Schritt bei Ihrem persönlichen Import bis zur Zulassung.",
+    "title": "Ihr Traumauto per Import.",
+    "subtitle": "Premium-Fahrzeuge – wir beraten, vermitteln und begleiten Sie Schritt für Schritt bei Ihrem persönlichen Import bis zur Zulassung.",
     "cta": "Fahrzeuge entdecken",
     "ctaSecondary": "Beratung anfragen"
   },
@@ -44,7 +44,7 @@
   },
   "featured": {
     "title": "Ausgewählte Fahrzeuge",
-    "subtitle": "Handverlesene Premium- und Luxusfahrzeuge zur Vermittlung für Ihren Korea-Import",
+    "subtitle": "Handverlesene Premium- und Luxusfahrzeuge zur Vermittlung für Ihren Premium-Import",
     "viewAll": "Alle Fahrzeuge ansehen"
   },
   "whyUs": {
@@ -52,11 +52,11 @@
     "items": {
       "check": {
         "title": "Fahrzeug-Check",
-        "desc": "Unabhängige Prüfung jedes Fahrzeugs vor Ihrem Kauf in Korea"
+        "desc": "Unabhängige Prüfung jedes Fahrzeugs vor Ihrem Kauf im Ausland"
       },
       "shipping": {
         "title": "Transport-Abwicklung & Support",
-        "desc": "Unterstützung und Organisation des Transports von Korea nach Deutschland"
+        "desc": "Unterstützung und Organisation des internationalen Fahrzeugtransports"
       },
       "customs": {
         "title": "Unterstützung bei der Verzollung",
@@ -138,7 +138,7 @@
   },
   "about": {
     "title": "Über uns",
-    "intro": "Autohaus AKER ist Ihr unabhängiger Berater und Vermittler für Premium- und Luxusfahrzeuge in Niederkassel bei Köln. Wir vermitteln hochwertige Fahrzeuge aus Korea und begleiten Sie bei Ihrem persönlichen Importprozess.",
+    "intro": "Autohaus AKER ist Ihr unabhängiger Berater und Vermittler für Premium- und Luxusfahrzeuge in Niederkassel bei Köln. Wir vermitteln hochwertige Fahrzeuge im Ausland und begleiten Sie bei Ihrem persönlichen Importprozess.",
     "mission": "Unsere Mission",
     "missionText": "Wir machen den personalisierten Import von Premium-Fahrzeugen transparent, sicher und nachvollziehbar. Von der Fahrzeugauswahl über die Prüfung bis zur Zulassung in Deutschland – wir beraten und begleiten Sie.",
     "values": "Unsere Werte",
@@ -150,10 +150,10 @@
   },
   "service": {
     "title": "Unser Service",
-    "subtitle": "Beratung und Begleitung bei jedem Schritt Ihres Korea-Imports",
+    "subtitle": "Beratung und Begleitung bei jedem Schritt Ihres Fahrzeugimports",
     "import": {
-      "title": "Import-Beratung Korea",
-      "desc": "Wir beraten und begleiten Sie beim Import von Premium-Fahrzeugen aus Korea. Der Prozess dauert in der Regel 8–12 Wochen."
+      "title": "Import-Beratung",
+      "desc": "Wir beraten und begleiten Sie beim Import von Premium-Fahrzeugen. Der Prozess dauert in der Regel 8–12 Wochen."
     },
     "check": {
       "title": "Fahrzeugprüfung",
@@ -179,7 +179,7 @@
   "faq": {
     "title": "Häufige Fragen",
     "items": {
-      "q1": { "q": "Wie lange dauert der Import aus Korea?", "a": "In der Regel 8–12 Wochen vom Kauf bis zur Ankunft in Deutschland – wir begleiten Sie während des gesamten Prozesses." },
+      "q1": { "q": "Wie lange dauert ein Fahrzeugimport?", "a": "In der Regel 8–12 Wochen vom Kauf bis zur Ankunft in Deutschland – wir begleiten Sie während des gesamten Prozesses." },
       "q2": { "q": "Unterstützen Sie bei Transport und Verzollung?", "a": "Ja. Wir organisieren und begleiten Transport sowie Verzollung im Rahmen unserer Beratungsleistung. Details und Kosten werden individuell vor Vertragsabschluss besprochen." },
       "q3": { "q": "Kann ich ein Fahrzeug reservieren, das noch unterwegs ist?", "a": "Ja, Fahrzeuge mit dem Status 'Unterwegs' können vorab reserviert werden." },
       "q4": { "q": "Vermitteln Sie auch den Verkauf von Gebrauchtwagen?", "a": "Ja! Nutzen Sie unser Formular 'Auto verkaufen' für eine unverbindliche Vermittlungsanfrage." },
@@ -194,12 +194,12 @@
     "cookies": "Cookie-Einstellungen"
   },
   "footer": {
-    "tagline": "Premium-Importe aus Korea. Beratung, Vermittlung & Begleitung.",
+    "tagline": "Premium-Fahrzeugimport. Beratung, Vermittlung & Begleitung.",
     "navigation": "Navigation",
     "legal": "Rechtliches",
     "contact": "Kontakt",
     "rights": "Alle Rechte vorbehalten.",
-    "disclaimer": "Fahrzeugimport aus Korea – individuelle Beratung empfohlen."
+    "disclaimer": "Fahrzeugimport – individuelle Beratung empfohlen."
   },
   "cookie": {
     "message": "Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten.",
