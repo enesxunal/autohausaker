@@ -6,7 +6,7 @@ export const GOOGLE_SITE_VERIFICATION = "EDqrupOD6fEwuRmdgifHwQ5NzB0iI6vmg-NfbSy
 
 const OG_TITLE = "Autohaus AKER | Premium Fahrzeuge aus Korea";
 const OG_DESCRIPTION =
-  "Autohaus AKER – Ihr Spezialist für Premium- und Luxusfahrzeuge. Direktimport aus Korea. Niederkassel bei Köln.";
+  "Autohaus AKER – Ihr Berater und Vermittler für Premium-Importe aus Korea. Wir begleiten Sie bei Ihrem persönlichen Importprozess. Niederkassel bei Köln.";
 
 export function siteMetadata(overrides?: Partial<Metadata>): Metadata {
   return {

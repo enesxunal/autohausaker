@@ -29,9 +29,11 @@ export default async function AgbPage() {
 
         <h2>§ 3 Fahrzeugimport aus Korea</h2>
         <p>
-          Bei Importfahrzeugen aus Korea beträgt die voraussichtliche Lieferzeit 8–12 Wochen ab
-          Vertragsabschluss. Versand und Verzollung sind im vereinbarten Service enthalten, sofern
-          nicht anders vereinbart.
+          {settings.company_name} erbringt Beratungs- und Vermittlungsleistungen beim Import von
+          Fahrzeugen aus Korea. Die voraussichtliche Bearbeitungszeit beträgt 8–12 Wochen ab
+          Vertragsabschluss. Transport und Verzollung werden im Rahmen unserer
+          Unterstützungsleistung organisiert und begleitet; der Import erfolgt in Ihrem Namen als
+          Kunde, sofern nicht anders vereinbart.
         </p>
 
         <h2>§ 4 Preise und Zahlung</h2>
@@ -46,10 +48,11 @@ export default async function AgbPage() {
           abweichende Regelungen gelten — diese werden im Einzelfall besprochen und dokumentiert.
         </p>
 
-        <h2>§ 6 An- und Verkauf</h2>
+        <h2>§ 6 An- und Verkaufsvermittlung</h2>
         <p>
-          Ankaufangebote über unser „Auto verkaufen"-Formular sind unverbindlich. Ein verbindliches
-          Angebot erfolgt erst nach Begutachtung des Fahrzeugs.
+          Anfragen über unser „Auto verkaufen"-Formular sind unverbindlich. {settings.company_name}{" "}
+          vermittelt den An- und Verkauf von Fahrzeugen. Ein verbindliches Angebot erfolgt erst nach
+          Begutachtung des Fahrzeugs.
         </p>
 
         <h2>§ 7 Schlussbestimmungen</h2>

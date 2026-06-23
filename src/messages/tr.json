@@ -55,12 +55,12 @@
         "desc": "Her araç ithalat öncesi detaylı şekilde kontrol edilir"
       },
       "shipping": {
-        "title": "Nakliye Dahil",
-        "desc": "Kore'den Almanya'ya taşıma hizmetimize dahildir"
+        "title": "Nakliye Desteği",
+        "desc": "Kore'den Almanya'ya taşımanın organizasyonu ve desteği"
       },
       "customs": {
-        "title": "Gümrük Dahil",
-        "desc": "Tüm gümrük işlemlerini sizin için hallederiz"
+        "title": "Gümrük Desteği",
+        "desc": "Tüm gümrük işlemlerinde sizi profesyonelce yönlendirir ve destekleriz."
       },
       "price": {
         "title": "Adil Fiyatlar",

@@ -22,7 +22,7 @@ export default async function SellCta() {
 
           <div className="gold-v-frame relative px-5 py-12 text-center sm:px-8 md:px-20 md:py-24">
             <p className="text-[9px] font-bold uppercase tracking-[0.35em] gold-gradient-text md:text-[10px] md:tracking-[0.45em]">
-              An & Verkauf
+              Vermittlung
             </p>
             <h2 className="font-display mx-auto mt-4 max-w-2xl text-2xl font-semibold uppercase tracking-wide sm:text-3xl md:text-5xl">
               <span className="gold-gradient-text">{t("title")}</span>

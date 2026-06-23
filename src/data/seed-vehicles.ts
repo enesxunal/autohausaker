@@ -16,7 +16,7 @@ export const SEED_VEHICLES: Vehicle[] = [
     price: 189900,
     status: "available",
     description_de:
-      "Atemberaubender Ferrari 488 GTB in Rosso Corsa. Vollständige Servicehistor, deutsche Zulassung. Premium-Fahrzeug aus unserem Bestand — sofort verfügbar.",
+      "Atemberaubender Ferrari 488 GTB in Rosso Corsa. Vollständige Servicehistorie, deutsche Zulassung. Vermitteltes Premium-Fahrzeug — sofort verfügbar.",
     description_en:
       "Stunning Ferrari 488 GTB in Rosso Corsa. Full service history, German registration. Premium vehicle from our stock — available immediately.",
     description_tr:
@@ -95,7 +95,7 @@ export const SEED_VEHICLES: Vehicle[] = [
     price: 89900,
     status: "in_transit",
     description_de:
-      "BMW M4 Competition xDrive — Import aus Korea unterwegs. Erwartete Ankunft in 8–12 Wochen. Jetzt reservieren!",
+      "BMW M4 Competition xDrive — vermittelter Import aus Korea unterwegs. Erwartete Ankunft in 8–12 Wochen. Jetzt reservieren!",
     description_en:
       "BMW M4 Competition xDrive — import from Korea on the way. Expected arrival in 8–12 weeks. Reserve now!",
     description_tr:
@@ -147,7 +147,7 @@ export const SEED_VEHICLES: Vehicle[] = [
     price: 64900,
     status: "in_transit",
     description_de:
-      "Genesis GV80 — Premium-SUV direkt aus Korea importiert. Volle Ausstattung, Nappa-Leder, Head-up-Display.",
+      "Genesis GV80 — Premium-SUV zur Vermittlung aus Korea. Volle Ausstattung, Nappa-Leder, Head-up-Display.",
     description_en:
       "Genesis GV80 — premium SUV imported directly from Korea. Full equipment, Nappa leather, head-up display.",
     description_tr:
@@ -199,7 +199,7 @@ export const SEED_VEHICLES: Vehicle[] = [
     price: null,
     status: "available",
     description_de:
-      "Bentley Continental GT V8 — Luxus pur. Mulliner-Paket, Massage-Sitze. Exklusives Angebot.",
+      "Bentley Continental GT V8 — Luxus pur. Mulliner-Paket, Massage-Sitze. Vermitteltes Exklusivfahrzeug.",
     description_en:
       "Bentley Continental GT V8 — pure luxury. Mulliner package, massage seats. Exclusive offer.",
     description_tr:
